@@ -1,34 +1,47 @@
-# Define the import for your module
+# Import the database module and initialize the database
 <@
-import database
+from database import init_db, add_item, update_item, delete_item, get_item, get_items, add_category, get_categories
+init_db()
 @>
 
-# Define pool of items and initial state
-pool: <item> 10
-init:
-    database.init_db()
+# Define pools of values
+pool: <str> 5
+pool: <int> 5
+pool: <item> 3
+pool: <category> 2
 
-# Actions
-<action>
-prob: 0.25
-database.add_item("item", 10.0, 100)
+# Constants and values for testing
+<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
+<int> := 100, 20, 30, 150, 50
+<category> := "Electronics", "Apparel"
+<item> := {0..4}  # Using indices to refer to items by position
 
+# Define actions - Creating and modifying items and categories
 <action>
-prob: 0.25
-database.delete_item("item")
-
-<action>
-prob: 0.25
-database.update_item("item", quantity=50)
+add_category(<category>)
 
 <action>
-prob: 0.25
-database.get_item("item")
+choice := {0..4}
+add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity
 
-# Properties (Invariants to check after each action)
-property:
-    database.get_items() is not None
+<action>
+choice := {0..4}
+update_item(<str>, quantity=<int>)
 
-# Cleanup if needed
-cleanup:
-    database.clear_db()  # Assuming you have a method to clear the database
+<action>
+choice := {0..4}
+update_item(<str>, price=<int>)
+
+<action>
+choice := {0..4}
+delete_item(<str>)
+
+<action>
+item := get_item(<str>)
+
+<action>
+items := get_items()
+
+# Define properties - Ensuring data integrity
+property: all(item.name in [<str>] for item in get_items())
+property: all(category.name in ["Electronics", "Apparel"] for category in get_categories())
