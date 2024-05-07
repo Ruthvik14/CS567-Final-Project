@@ -42,10 +42,10 @@ def query_db(query, args=(), one=False):
     except Error as e:
         print(f"Error querying database: {e}")
 
-def add_item(name, price, quantity):
+def add_item(name, price, quantity, category_id=1):
     """Add a new item to the database."""
-    execute_query("INSERT INTO items (name, price, quantity) VALUES (?, ?, ?)", 
-                  (name, price, quantity))
+    execute_query("INSERT INTO items (name, price, quantity, category_id) VALUES (?, ?, ?, ?)", 
+                  (name, price, quantity, category_id))
     print(f"Added {name} to the database.")
 
 def update_item(name, quantity=None, price=None):
@@ -72,3 +72,35 @@ def get_items():
     """Get all items from the database."""
     items = query_db("SELECT * FROM items")
     return items
+
+def add_category(name):
+    """Add a new category to the database."""
+    execute_query("INSERT INTO categories (name) VALUES (?)", (name,))
+    print(f"Added category {name}.")
+
+def get_categories():
+    """Retrieve all categories from the database."""
+    return query_db("SELECT * FROM categories")
+
+def bulk_update_items(items):
+    """Bulk update items in the database."""
+    try:
+        with closing(connect_db()) as conn:
+            cur = conn.cursor()
+            cur.executemany("UPDATE items SET price = ?, quantity = ? WHERE name = ?", items)
+            conn.commit()
+            print("Bulk update completed successfully.")
+    except Error as e:
+        print(f"Error during bulk update: {e}")
+
+def backup_database():
+    """Create a backup of the database."""
+    try:
+        with closing(connect_db()) as conn, open(DATABASE_PATH + ".backup", "w") as f:
+            for line in conn.iterdump():
+                f.write('%s\n' % line)
+        print("Database backup created successfully.")
+    except Error as e:
+        print(f"Error creating database backup: {e}")
+
+backup_database()
