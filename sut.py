@@ -20,24 +20,27 @@ import os.path
 from itertools import chain, combinations
 import coverage
 # BEGIN STANDALONE CODE
-import database
+from database import init_db, add_item, update_item, delete_item, get_item, get_items, add_category, get_categories
+init_db()
 # END STANDALONE CODE
 class sut(object):
     def act0(self):
         '''
-        database.init_db()
+        str0 = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         '''
-        self.__test.append(('''database.init_db() ''',self.guard0,self.act0))
+        self.__test.append(('''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard0,self.act0))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''database.init_db() '''))
+            print('ACTION:',self.prettyName('''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            database.init_db()
+            self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -45,28 +48,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_str[0] is not None: self.noLongerNone('''self.p_str[0]''')
+            if self.__useCould and self.p_str[0] is not None: self.noLongerUsed('''self.p_str[0]''')
+            self.p_str_used[0]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard0(self):
-        return True
+        return (((self.p_str_used[0]) or (self.p_str[0] is None) or (self.__relaxUsedRestriction)))
     
     def act1(self):
         '''
-        %action%
+        str1 = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         '''
-        self.__test.append(('''%action% ''',self.guard1,self.act1))
+        self.__test.append(('''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard1,self.act1))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''%action% '''))
+            print('ACTION:',self.prettyName('''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            %action%
+            self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -74,28 +87,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_str[1] is not None: self.noLongerNone('''self.p_str[1]''')
+            if self.__useCould and self.p_str[1] is not None: self.noLongerUsed('''self.p_str[1]''')
+            self.p_str_used[1]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard1(self):
-        return True
+        return (((self.p_str_used[1]) or (self.p_str[1] is None) or (self.__relaxUsedRestriction)))
     
     def act2(self):
         '''
-        prob: 0.25
+        str2 = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         '''
-        self.__test.append(('''prob: 0.25 ''',self.guard2,self.act2))
+        self.__test.append(('''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard2,self.act2))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''prob: 0.25 '''))
+            print('ACTION:',self.prettyName('''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            prob: 0.25
+            self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -103,28 +126,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_str[2] is not None: self.noLongerNone('''self.p_str[2]''')
+            if self.__useCould and self.p_str[2] is not None: self.noLongerUsed('''self.p_str[2]''')
+            self.p_str_used[2]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard2(self):
-        return True
+        return (((self.p_str_used[2]) or (self.p_str[2] is None) or (self.__relaxUsedRestriction)))
     
     def act3(self):
         '''
-        database.add_item("item", 10.0, 100)
+        str3 = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         '''
-        self.__test.append(('''database.add_item("item", 10.0, 100) ''',self.guard3,self.act3))
+        self.__test.append(('''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard3,self.act3))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''database.add_item("item", 10.0, 100) '''))
+            print('ACTION:',self.prettyName('''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            database.add_item("item", 10.0, 100)
+            self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -132,28 +165,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_str[3] is not None: self.noLongerNone('''self.p_str[3]''')
+            if self.__useCould and self.p_str[3] is not None: self.noLongerUsed('''self.p_str[3]''')
+            self.p_str_used[3]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard3(self):
-        return True
+        return (((self.p_str_used[3]) or (self.p_str[3] is None) or (self.__relaxUsedRestriction)))
     
     def act4(self):
         '''
-        %action%
+        str4 = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         '''
-        self.__test.append(('''%action% ''',self.guard4,self.act4))
+        self.__test.append(('''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard4,self.act4))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''%action% '''))
+            print('ACTION:',self.prettyName('''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            %action%
+            self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera"
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -161,28 +204,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_str[4] is not None: self.noLongerNone('''self.p_str[4]''')
+            if self.__useCould and self.p_str[4] is not None: self.noLongerUsed('''self.p_str[4]''')
+            self.p_str_used[4]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard4(self):
-        return True
+        return (((self.p_str_used[4]) or (self.p_str[4] is None) or (self.__relaxUsedRestriction)))
     
     def act5(self):
         '''
-        prob: 0.25
+        int0 = 100, 20, 30, 150, 50
         '''
-        self.__test.append(('''prob: 0.25 ''',self.guard5,self.act5))
+        self.__test.append(('''self.p_int[0] = 100, 20, 30, 150, 50 ''',self.guard5,self.act5))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''prob: 0.25 '''))
+            print('ACTION:',self.prettyName('''self.p_int[0] = 100, 20, 30, 150, 50 '''))
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            prob: 0.25
+            self.p_int[0] = 100, 20, 30, 150, 50
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -190,28 +243,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_int[0] is not None: self.noLongerNone('''self.p_int[0]''')
+            if self.__useCould and self.p_int[0] is not None: self.noLongerUsed('''self.p_int[0]''')
+            self.p_int_used[0]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard5(self):
-        return True
+        return (((self.p_int_used[0]) or (self.p_int[0] is None) or (self.__relaxUsedRestriction)))
     
     def act6(self):
         '''
-        database.delete_item("item")
+        int1 = 100, 20, 30, 150, 50
         '''
-        self.__test.append(('''database.delete_item("item") ''',self.guard6,self.act6))
+        self.__test.append(('''self.p_int[1] = 100, 20, 30, 150, 50 ''',self.guard6,self.act6))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''database.delete_item("item") '''))
+            print('ACTION:',self.prettyName('''self.p_int[1] = 100, 20, 30, 150, 50 '''))
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            database.delete_item("item")
+            self.p_int[1] = 100, 20, 30, 150, 50
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -219,28 +282,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_int[1] is not None: self.noLongerNone('''self.p_int[1]''')
+            if self.__useCould and self.p_int[1] is not None: self.noLongerUsed('''self.p_int[1]''')
+            self.p_int_used[1]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard6(self):
-        return True
+        return (((self.p_int_used[1]) or (self.p_int[1] is None) or (self.__relaxUsedRestriction)))
     
     def act7(self):
         '''
-        %action%
+        int2 = 100, 20, 30, 150, 50
         '''
-        self.__test.append(('''%action% ''',self.guard7,self.act7))
+        self.__test.append(('''self.p_int[2] = 100, 20, 30, 150, 50 ''',self.guard7,self.act7))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''%action% '''))
+            print('ACTION:',self.prettyName('''self.p_int[2] = 100, 20, 30, 150, 50 '''))
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            %action%
+            self.p_int[2] = 100, 20, 30, 150, 50
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -248,28 +321,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_int[2] is not None: self.noLongerNone('''self.p_int[2]''')
+            if self.__useCould and self.p_int[2] is not None: self.noLongerUsed('''self.p_int[2]''')
+            self.p_int_used[2]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard7(self):
-        return True
+        return (((self.p_int_used[2]) or (self.p_int[2] is None) or (self.__relaxUsedRestriction)))
     
     def act8(self):
         '''
-        prob: 0.25
+        int3 = 100, 20, 30, 150, 50
         '''
-        self.__test.append(('''prob: 0.25 ''',self.guard8,self.act8))
+        self.__test.append(('''self.p_int[3] = 100, 20, 30, 150, 50 ''',self.guard8,self.act8))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''prob: 0.25 '''))
+            print('ACTION:',self.prettyName('''self.p_int[3] = 100, 20, 30, 150, 50 '''))
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            prob: 0.25
+            self.p_int[3] = 100, 20, 30, 150, 50
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -277,28 +360,38 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_int[3] is not None: self.noLongerNone('''self.p_int[3]''')
+            if self.__useCould and self.p_int[3] is not None: self.noLongerUsed('''self.p_int[3]''')
+            self.p_int_used[3]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard8(self):
-        return True
+        return (((self.p_int_used[3]) or (self.p_int[3] is None) or (self.__relaxUsedRestriction)))
     
     def act9(self):
         '''
-        database.update_item("item", quantity=50)
+        int4 = 100, 20, 30, 150, 50
         '''
-        self.__test.append(('''database.update_item("item", quantity=50) ''',self.guard9,self.act9))
+        self.__test.append(('''self.p_int[4] = 100, 20, 30, 150, 50 ''',self.guard9,self.act9))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
             __bV = {}
-            print('ACTION:',self.prettyName('''database.update_item("item", quantity=50) '''))
+            print('ACTION:',self.prettyName('''self.p_int[4] = 100, 20, 30, 150, 50 '''))
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
         if self.__collectCov: self.__cov.start()
         try: test_before_each(self)
         except: pass
         try:
-            database.update_item("item", quantity=50)
+            self.p_int[4] = 100, 20, 30, 150, 50
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -306,18 +399,221 @@ class sut(object):
         finally:
             try: self.__raised = raised
             except: pass
+            if self.__useCould and self.p_int[4] is not None: self.noLongerNone('''self.p_int[4]''')
+            if self.__useCould and self.p_int[4] is not None: self.noLongerUsed('''self.p_int[4]''')
+            self.p_int_used[4]=False
             try: test_after_each(self)
             except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
             if self.__collectCov: self.__cov.stop(); self.__updateCov()
         if self.__verboseActions: print('='*50)
     def guard9(self):
-        return True
+        return (((self.p_int_used[4]) or (self.p_int[4] is None) or (self.__relaxUsedRestriction)))
     
     def act10(self):
         '''
+        category0 = "Electronics", "Apparel"
+        '''
+        self.__test.append(('''self.p_category[0] = "Electronics", "Apparel" ''',self.guard10,self.act10))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''self.p_category[0] = "Electronics", "Apparel" '''))
+            try: __bV['''self.p_category[0]'''] = repr(self.p_category[0]); print(self.prettyName('''self.p_category[0]''') + ' =', __bV['''self.p_category[0]'''], ':',type(self.p_category[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            self.p_category[0] = "Electronics", "Apparel"
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            if self.__useCould and self.p_category[0] is not None: self.noLongerNone('''self.p_category[0]''')
+            if self.__useCould and self.p_category[0] is not None: self.noLongerUsed('''self.p_category[0]''')
+            self.p_category_used[0]=False
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_category[0])
+                    if __aV != __bV['''self.p_category[0]''']: print('=>',self.prettyName('''self.p_category[0]''') + ' =',__aV, ':',type(self.p_category[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard10(self):
+        return (((self.p_category_used[0]) or (self.p_category[0] is None) or (self.__relaxUsedRestriction)))
+    
+    def act11(self):
+        '''
+        category1 = "Electronics", "Apparel"
+        '''
+        self.__test.append(('''self.p_category[1] = "Electronics", "Apparel" ''',self.guard11,self.act11))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''self.p_category[1] = "Electronics", "Apparel" '''))
+            try: __bV['''self.p_category[1]'''] = repr(self.p_category[1]); print(self.prettyName('''self.p_category[1]''') + ' =', __bV['''self.p_category[1]'''], ':',type(self.p_category[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            self.p_category[1] = "Electronics", "Apparel"
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            if self.__useCould and self.p_category[1] is not None: self.noLongerNone('''self.p_category[1]''')
+            if self.__useCould and self.p_category[1] is not None: self.noLongerUsed('''self.p_category[1]''')
+            self.p_category_used[1]=False
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_category[1])
+                    if __aV != __bV['''self.p_category[1]''']: print('=>',self.prettyName('''self.p_category[1]''') + ' =',__aV, ':',type(self.p_category[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard11(self):
+        return (((self.p_category_used[1]) or (self.p_category[1] is None) or (self.__relaxUsedRestriction)))
+    
+    def act12(self):
+        '''
+        item0 = {0..4}  # Using indices to refer to items by position
+        '''
+        self.__test.append(('''self.p_item[0] = {0..4}  # Using indices to refer to items by position ''',self.guard12,self.act12))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''self.p_item[0] = {0..4}  # Using indices to refer to items by position '''))
+            try: __bV['''self.p_item[0]'''] = repr(self.p_item[0]); print(self.prettyName('''self.p_item[0]''') + ' =', __bV['''self.p_item[0]'''], ':',type(self.p_item[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            self.p_item[0] = {0..4}  # Using indices to refer to items by position
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            if self.__useCould and self.p_item[0] is not None: self.noLongerNone('''self.p_item[0]''')
+            if self.__useCould and self.p_item[0] is not None: self.noLongerUsed('''self.p_item[0]''')
+            self.p_item_used[0]=False
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_item[0])
+                    if __aV != __bV['''self.p_item[0]''']: print('=>',self.prettyName('''self.p_item[0]''') + ' =',__aV, ':',type(self.p_item[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard12(self):
+        return (((self.p_item_used[0]) or (self.p_item[0] is None) or (self.__relaxUsedRestriction)))
+    
+    def act13(self):
+        '''
+        item1 = {0..4}  # Using indices to refer to items by position
+        '''
+        self.__test.append(('''self.p_item[1] = {0..4}  # Using indices to refer to items by position ''',self.guard13,self.act13))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''self.p_item[1] = {0..4}  # Using indices to refer to items by position '''))
+            try: __bV['''self.p_item[1]'''] = repr(self.p_item[1]); print(self.prettyName('''self.p_item[1]''') + ' =', __bV['''self.p_item[1]'''], ':',type(self.p_item[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            self.p_item[1] = {0..4}  # Using indices to refer to items by position
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            if self.__useCould and self.p_item[1] is not None: self.noLongerNone('''self.p_item[1]''')
+            if self.__useCould and self.p_item[1] is not None: self.noLongerUsed('''self.p_item[1]''')
+            self.p_item_used[1]=False
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_item[1])
+                    if __aV != __bV['''self.p_item[1]''']: print('=>',self.prettyName('''self.p_item[1]''') + ' =',__aV, ':',type(self.p_item[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard13(self):
+        return (((self.p_item_used[1]) or (self.p_item[1] is None) or (self.__relaxUsedRestriction)))
+    
+    def act14(self):
+        '''
+        item2 = {0..4}  # Using indices to refer to items by position
+        '''
+        self.__test.append(('''self.p_item[2] = {0..4}  # Using indices to refer to items by position ''',self.guard14,self.act14))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''self.p_item[2] = {0..4}  # Using indices to refer to items by position '''))
+            try: __bV['''self.p_item[2]'''] = repr(self.p_item[2]); print(self.prettyName('''self.p_item[2]''') + ' =', __bV['''self.p_item[2]'''], ':',type(self.p_item[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            self.p_item[2] = {0..4}  # Using indices to refer to items by position
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            if self.__useCould and self.p_item[2] is not None: self.noLongerNone('''self.p_item[2]''')
+            if self.__useCould and self.p_item[2] is not None: self.noLongerUsed('''self.p_item[2]''')
+            self.p_item_used[2]=False
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_item[2])
+                    if __aV != __bV['''self.p_item[2]''']: print('=>',self.prettyName('''self.p_item[2]''') + ' =',__aV, ':',type(self.p_item[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard14(self):
+        return (((self.p_item_used[2]) or (self.p_item[2] is None) or (self.__relaxUsedRestriction)))
+    
+    def act15(self):
+        '''
         %action%
         '''
-        self.__test.append(('''%action% ''',self.guard10,self.act10))
+        self.__test.append(('''%action% ''',self.guard15,self.act15))
         self.__raised = None
         self.__refRaised = None
         if self.__verboseActions:
@@ -328,151 +624,6 @@ class sut(object):
         except: pass
         try:
             %action%
-        except Exception as exc:
-            raised = exc
-            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
-            raise
-        finally:
-            try: self.__raised = raised
-            except: pass
-            try: test_after_each(self)
-            except: pass
-            if self.__collectCov: self.__cov.stop(); self.__updateCov()
-        if self.__verboseActions: print('='*50)
-    def guard10(self):
-        return True
-    
-    def act11(self):
-        '''
-        prob: 0.25
-        '''
-        self.__test.append(('''prob: 0.25 ''',self.guard11,self.act11))
-        self.__raised = None
-        self.__refRaised = None
-        if self.__verboseActions:
-            __bV = {}
-            print('ACTION:',self.prettyName('''prob: 0.25 '''))
-        if self.__collectCov: self.__cov.start()
-        try: test_before_each(self)
-        except: pass
-        try:
-            prob: 0.25
-        except Exception as exc:
-            raised = exc
-            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
-            raise
-        finally:
-            try: self.__raised = raised
-            except: pass
-            try: test_after_each(self)
-            except: pass
-            if self.__collectCov: self.__cov.stop(); self.__updateCov()
-        if self.__verboseActions: print('='*50)
-    def guard11(self):
-        return True
-    
-    def act12(self):
-        '''
-        database.get_item("item")
-        '''
-        self.__test.append(('''database.get_item("item") ''',self.guard12,self.act12))
-        self.__raised = None
-        self.__refRaised = None
-        if self.__verboseActions:
-            __bV = {}
-            print('ACTION:',self.prettyName('''database.get_item("item") '''))
-        if self.__collectCov: self.__cov.start()
-        try: test_before_each(self)
-        except: pass
-        try:
-            database.get_item("item")
-        except Exception as exc:
-            raised = exc
-            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
-            raise
-        finally:
-            try: self.__raised = raised
-            except: pass
-            try: test_after_each(self)
-            except: pass
-            if self.__collectCov: self.__cov.stop(); self.__updateCov()
-        if self.__verboseActions: print('='*50)
-    def guard12(self):
-        return True
-    
-    def act13(self):
-        '''
-        database.get_items() is not None
-        '''
-        self.__test.append(('''database.get_items() is not None ''',self.guard13,self.act13))
-        self.__raised = None
-        self.__refRaised = None
-        if self.__verboseActions:
-            __bV = {}
-            print('ACTION:',self.prettyName('''database.get_items() is not None '''))
-        if self.__collectCov: self.__cov.start()
-        try: test_before_each(self)
-        except: pass
-        try:
-            database.get_items() is not None
-        except Exception as exc:
-            raised = exc
-            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
-            raise
-        finally:
-            try: self.__raised = raised
-            except: pass
-            try: test_after_each(self)
-            except: pass
-            if self.__collectCov: self.__cov.stop(); self.__updateCov()
-        if self.__verboseActions: print('='*50)
-    def guard13(self):
-        return True
-    
-    def act14(self):
-        '''
-        cleanup:
-        '''
-        self.__test.append(('''cleanup: ''',self.guard14,self.act14))
-        self.__raised = None
-        self.__refRaised = None
-        if self.__verboseActions:
-            __bV = {}
-            print('ACTION:',self.prettyName('''cleanup: '''))
-        if self.__collectCov: self.__cov.start()
-        try: test_before_each(self)
-        except: pass
-        try:
-            cleanup:
-        except Exception as exc:
-            raised = exc
-            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
-            raise
-        finally:
-            try: self.__raised = raised
-            except: pass
-            try: test_after_each(self)
-            except: pass
-            if self.__collectCov: self.__cov.stop(); self.__updateCov()
-        if self.__verboseActions: print('='*50)
-    def guard14(self):
-        return True
-    
-    def act15(self):
-        '''
-        database.clear_db()  # Assuming you have a method to clear the database
-        '''
-        self.__test.append(('''database.clear_db()  # Assuming you have a method to clear the database ''',self.guard15,self.act15))
-        self.__raised = None
-        self.__refRaised = None
-        if self.__verboseActions:
-            __bV = {}
-            print('ACTION:',self.prettyName('''database.clear_db()  # Assuming you have a method to clear the database '''))
-        if self.__collectCov: self.__cov.start()
-        try: test_before_each(self)
-        except: pass
-        try:
-            database.clear_db()  # Assuming you have a method to clear the database
         except Exception as exc:
             raised = exc
             if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
@@ -487,6 +638,9631 @@ class sut(object):
     def guard15(self):
         return True
     
+    def act16(self):
+        '''
+        add_category(category0)
+        '''
+        self.__test.append(('''add_category(self.p_category[0]) ''',self.guard16,self.act16))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_category(self.p_category[0]) '''))
+            try: __bV['''self.p_category[0]'''] = repr(self.p_category[0]); print(self.prettyName('''self.p_category[0]''') + ' =', __bV['''self.p_category[0]'''], ':',type(self.p_category[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_category(self.p_category[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_category_used[0]=True
+            self.nowUsed('''self.p_category[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_category[0])
+                    if __aV != __bV['''self.p_category[0]''']: print('=>',self.prettyName('''self.p_category[0]''') + ' =',__aV, ':',type(self.p_category[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard16(self):
+        return (self.p_category[0] is not None)
+    
+    def act17(self):
+        '''
+        add_category(category1)
+        '''
+        self.__test.append(('''add_category(self.p_category[1]) ''',self.guard17,self.act17))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_category(self.p_category[1]) '''))
+            try: __bV['''self.p_category[1]'''] = repr(self.p_category[1]); print(self.prettyName('''self.p_category[1]''') + ' =', __bV['''self.p_category[1]'''], ':',type(self.p_category[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_category(self.p_category[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_category_used[1]=True
+            self.nowUsed('''self.p_category[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_category[1])
+                    if __aV != __bV['''self.p_category[1]''']: print('=>',self.prettyName('''self.p_category[1]''') + ' =',__aV, ':',type(self.p_category[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard17(self):
+        return (self.p_category[1] is not None)
+    
+    def act18(self):
+        '''
+        %action%
+        '''
+        self.__test.append(('''%action% ''',self.guard18,self.act18))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''%action% '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            %action%
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard18(self):
+        return True
+    
+    def act19(self):
+        '''
+        choice = {0..4}
+        '''
+        self.__test.append(('''choice = {0..4} ''',self.guard19,self.act19))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''choice = {0..4} '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            choice = {0..4}
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard19(self):
+        return True
+    
+    def act20(self):
+        '''
+        add_item(str0, int0, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard20,self.act20))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard20(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None)
+    
+    def act21(self):
+        '''
+        add_item(str0, int0, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard21,self.act21))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard21(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None) and (self.p_int[1] is not None)
+    
+    def act22(self):
+        '''
+        add_item(str0, int0, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard22,self.act22))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard22(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None) and (self.p_int[2] is not None)
+    
+    def act23(self):
+        '''
+        add_item(str0, int0, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard23,self.act23))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard23(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None) and (self.p_int[3] is not None)
+    
+    def act24(self):
+        '''
+        add_item(str0, int0, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard24,self.act24))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard24(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None) and (self.p_int[4] is not None)
+    
+    def act25(self):
+        '''
+        add_item(str0, int1, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard25,self.act25))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard25(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None) and (self.p_int[0] is not None)
+    
+    def act26(self):
+        '''
+        add_item(str0, int1, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard26,self.act26))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard26(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None)
+    
+    def act27(self):
+        '''
+        add_item(str0, int1, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard27,self.act27))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard27(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None) and (self.p_int[2] is not None)
+    
+    def act28(self):
+        '''
+        add_item(str0, int1, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard28,self.act28))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard28(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None) and (self.p_int[3] is not None)
+    
+    def act29(self):
+        '''
+        add_item(str0, int1, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard29,self.act29))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard29(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None) and (self.p_int[4] is not None)
+    
+    def act30(self):
+        '''
+        add_item(str0, int2, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard30,self.act30))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard30(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None) and (self.p_int[0] is not None)
+    
+    def act31(self):
+        '''
+        add_item(str0, int2, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard31,self.act31))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard31(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None) and (self.p_int[1] is not None)
+    
+    def act32(self):
+        '''
+        add_item(str0, int2, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard32,self.act32))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard32(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None)
+    
+    def act33(self):
+        '''
+        add_item(str0, int2, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard33,self.act33))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard33(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None) and (self.p_int[3] is not None)
+    
+    def act34(self):
+        '''
+        add_item(str0, int2, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard34,self.act34))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard34(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None) and (self.p_int[4] is not None)
+    
+    def act35(self):
+        '''
+        add_item(str0, int3, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard35,self.act35))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard35(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None) and (self.p_int[0] is not None)
+    
+    def act36(self):
+        '''
+        add_item(str0, int3, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard36,self.act36))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard36(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None) and (self.p_int[1] is not None)
+    
+    def act37(self):
+        '''
+        add_item(str0, int3, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard37,self.act37))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard37(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None) and (self.p_int[2] is not None)
+    
+    def act38(self):
+        '''
+        add_item(str0, int3, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard38,self.act38))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard38(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None)
+    
+    def act39(self):
+        '''
+        add_item(str0, int3, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard39,self.act39))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard39(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None) and (self.p_int[4] is not None)
+    
+    def act40(self):
+        '''
+        add_item(str0, int4, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard40,self.act40))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard40(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None) and (self.p_int[0] is not None)
+    
+    def act41(self):
+        '''
+        add_item(str0, int4, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard41,self.act41))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard41(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None) and (self.p_int[1] is not None)
+    
+    def act42(self):
+        '''
+        add_item(str0, int4, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard42,self.act42))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard42(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None) and (self.p_int[2] is not None)
+    
+    def act43(self):
+        '''
+        add_item(str0, int4, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard43,self.act43))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard43(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None) and (self.p_int[3] is not None)
+    
+    def act44(self):
+        '''
+        add_item(str0, int4, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard44,self.act44))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard44(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None)
+    
+    def act45(self):
+        '''
+        add_item(str1, int0, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard45,self.act45))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard45(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None)
+    
+    def act46(self):
+        '''
+        add_item(str1, int0, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard46,self.act46))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard46(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None) and (self.p_int[1] is not None)
+    
+    def act47(self):
+        '''
+        add_item(str1, int0, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard47,self.act47))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard47(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None) and (self.p_int[2] is not None)
+    
+    def act48(self):
+        '''
+        add_item(str1, int0, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard48,self.act48))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard48(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None) and (self.p_int[3] is not None)
+    
+    def act49(self):
+        '''
+        add_item(str1, int0, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard49,self.act49))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard49(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None) and (self.p_int[4] is not None)
+    
+    def act50(self):
+        '''
+        add_item(str1, int1, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard50,self.act50))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard50(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None) and (self.p_int[0] is not None)
+    
+    def act51(self):
+        '''
+        add_item(str1, int1, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard51,self.act51))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard51(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None)
+    
+    def act52(self):
+        '''
+        add_item(str1, int1, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard52,self.act52))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard52(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None) and (self.p_int[2] is not None)
+    
+    def act53(self):
+        '''
+        add_item(str1, int1, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard53,self.act53))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard53(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None) and (self.p_int[3] is not None)
+    
+    def act54(self):
+        '''
+        add_item(str1, int1, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard54,self.act54))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard54(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None) and (self.p_int[4] is not None)
+    
+    def act55(self):
+        '''
+        add_item(str1, int2, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard55,self.act55))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard55(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None) and (self.p_int[0] is not None)
+    
+    def act56(self):
+        '''
+        add_item(str1, int2, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard56,self.act56))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard56(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None) and (self.p_int[1] is not None)
+    
+    def act57(self):
+        '''
+        add_item(str1, int2, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard57,self.act57))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard57(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None)
+    
+    def act58(self):
+        '''
+        add_item(str1, int2, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard58,self.act58))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard58(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None) and (self.p_int[3] is not None)
+    
+    def act59(self):
+        '''
+        add_item(str1, int2, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard59,self.act59))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard59(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None) and (self.p_int[4] is not None)
+    
+    def act60(self):
+        '''
+        add_item(str1, int3, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard60,self.act60))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard60(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None) and (self.p_int[0] is not None)
+    
+    def act61(self):
+        '''
+        add_item(str1, int3, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard61,self.act61))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard61(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None) and (self.p_int[1] is not None)
+    
+    def act62(self):
+        '''
+        add_item(str1, int3, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard62,self.act62))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard62(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None) and (self.p_int[2] is not None)
+    
+    def act63(self):
+        '''
+        add_item(str1, int3, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard63,self.act63))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard63(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None)
+    
+    def act64(self):
+        '''
+        add_item(str1, int3, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard64,self.act64))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard64(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None) and (self.p_int[4] is not None)
+    
+    def act65(self):
+        '''
+        add_item(str1, int4, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard65,self.act65))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard65(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None) and (self.p_int[0] is not None)
+    
+    def act66(self):
+        '''
+        add_item(str1, int4, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard66,self.act66))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard66(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None) and (self.p_int[1] is not None)
+    
+    def act67(self):
+        '''
+        add_item(str1, int4, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard67,self.act67))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard67(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None) and (self.p_int[2] is not None)
+    
+    def act68(self):
+        '''
+        add_item(str1, int4, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard68,self.act68))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard68(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None) and (self.p_int[3] is not None)
+    
+    def act69(self):
+        '''
+        add_item(str1, int4, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard69,self.act69))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard69(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None)
+    
+    def act70(self):
+        '''
+        add_item(str2, int0, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard70,self.act70))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard70(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None)
+    
+    def act71(self):
+        '''
+        add_item(str2, int0, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard71,self.act71))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard71(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None) and (self.p_int[1] is not None)
+    
+    def act72(self):
+        '''
+        add_item(str2, int0, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard72,self.act72))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard72(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None) and (self.p_int[2] is not None)
+    
+    def act73(self):
+        '''
+        add_item(str2, int0, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard73,self.act73))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard73(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None) and (self.p_int[3] is not None)
+    
+    def act74(self):
+        '''
+        add_item(str2, int0, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard74,self.act74))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard74(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None) and (self.p_int[4] is not None)
+    
+    def act75(self):
+        '''
+        add_item(str2, int1, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard75,self.act75))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard75(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None) and (self.p_int[0] is not None)
+    
+    def act76(self):
+        '''
+        add_item(str2, int1, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard76,self.act76))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard76(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None)
+    
+    def act77(self):
+        '''
+        add_item(str2, int1, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard77,self.act77))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard77(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None) and (self.p_int[2] is not None)
+    
+    def act78(self):
+        '''
+        add_item(str2, int1, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard78,self.act78))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard78(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None) and (self.p_int[3] is not None)
+    
+    def act79(self):
+        '''
+        add_item(str2, int1, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard79,self.act79))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard79(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None) and (self.p_int[4] is not None)
+    
+    def act80(self):
+        '''
+        add_item(str2, int2, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard80,self.act80))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard80(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None) and (self.p_int[0] is not None)
+    
+    def act81(self):
+        '''
+        add_item(str2, int2, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard81,self.act81))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard81(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None) and (self.p_int[1] is not None)
+    
+    def act82(self):
+        '''
+        add_item(str2, int2, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard82,self.act82))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard82(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None)
+    
+    def act83(self):
+        '''
+        add_item(str2, int2, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard83,self.act83))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard83(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None) and (self.p_int[3] is not None)
+    
+    def act84(self):
+        '''
+        add_item(str2, int2, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard84,self.act84))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard84(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None) and (self.p_int[4] is not None)
+    
+    def act85(self):
+        '''
+        add_item(str2, int3, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard85,self.act85))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard85(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None) and (self.p_int[0] is not None)
+    
+    def act86(self):
+        '''
+        add_item(str2, int3, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard86,self.act86))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard86(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None) and (self.p_int[1] is not None)
+    
+    def act87(self):
+        '''
+        add_item(str2, int3, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard87,self.act87))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard87(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None) and (self.p_int[2] is not None)
+    
+    def act88(self):
+        '''
+        add_item(str2, int3, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard88,self.act88))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard88(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None)
+    
+    def act89(self):
+        '''
+        add_item(str2, int3, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard89,self.act89))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard89(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None) and (self.p_int[4] is not None)
+    
+    def act90(self):
+        '''
+        add_item(str2, int4, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard90,self.act90))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard90(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None) and (self.p_int[0] is not None)
+    
+    def act91(self):
+        '''
+        add_item(str2, int4, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard91,self.act91))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard91(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None) and (self.p_int[1] is not None)
+    
+    def act92(self):
+        '''
+        add_item(str2, int4, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard92,self.act92))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard92(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None) and (self.p_int[2] is not None)
+    
+    def act93(self):
+        '''
+        add_item(str2, int4, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard93,self.act93))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard93(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None) and (self.p_int[3] is not None)
+    
+    def act94(self):
+        '''
+        add_item(str2, int4, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard94,self.act94))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard94(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None)
+    
+    def act95(self):
+        '''
+        add_item(str3, int0, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard95,self.act95))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard95(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None)
+    
+    def act96(self):
+        '''
+        add_item(str3, int0, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard96,self.act96))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard96(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None) and (self.p_int[1] is not None)
+    
+    def act97(self):
+        '''
+        add_item(str3, int0, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard97,self.act97))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard97(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None) and (self.p_int[2] is not None)
+    
+    def act98(self):
+        '''
+        add_item(str3, int0, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard98,self.act98))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard98(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None) and (self.p_int[3] is not None)
+    
+    def act99(self):
+        '''
+        add_item(str3, int0, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard99,self.act99))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard99(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None) and (self.p_int[4] is not None)
+    
+    def act100(self):
+        '''
+        add_item(str3, int1, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard100,self.act100))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard100(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None) and (self.p_int[0] is not None)
+    
+    def act101(self):
+        '''
+        add_item(str3, int1, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard101,self.act101))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard101(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None)
+    
+    def act102(self):
+        '''
+        add_item(str3, int1, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard102,self.act102))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard102(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None) and (self.p_int[2] is not None)
+    
+    def act103(self):
+        '''
+        add_item(str3, int1, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard103,self.act103))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard103(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None) and (self.p_int[3] is not None)
+    
+    def act104(self):
+        '''
+        add_item(str3, int1, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard104,self.act104))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard104(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None) and (self.p_int[4] is not None)
+    
+    def act105(self):
+        '''
+        add_item(str3, int2, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard105,self.act105))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard105(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None) and (self.p_int[0] is not None)
+    
+    def act106(self):
+        '''
+        add_item(str3, int2, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard106,self.act106))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard106(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None) and (self.p_int[1] is not None)
+    
+    def act107(self):
+        '''
+        add_item(str3, int2, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard107,self.act107))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard107(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None)
+    
+    def act108(self):
+        '''
+        add_item(str3, int2, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard108,self.act108))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard108(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None) and (self.p_int[3] is not None)
+    
+    def act109(self):
+        '''
+        add_item(str3, int2, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard109,self.act109))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard109(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None) and (self.p_int[4] is not None)
+    
+    def act110(self):
+        '''
+        add_item(str3, int3, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard110,self.act110))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard110(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None) and (self.p_int[0] is not None)
+    
+    def act111(self):
+        '''
+        add_item(str3, int3, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard111,self.act111))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard111(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None) and (self.p_int[1] is not None)
+    
+    def act112(self):
+        '''
+        add_item(str3, int3, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard112,self.act112))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard112(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None) and (self.p_int[2] is not None)
+    
+    def act113(self):
+        '''
+        add_item(str3, int3, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard113,self.act113))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard113(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None)
+    
+    def act114(self):
+        '''
+        add_item(str3, int3, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard114,self.act114))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard114(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None) and (self.p_int[4] is not None)
+    
+    def act115(self):
+        '''
+        add_item(str3, int4, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard115,self.act115))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard115(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None) and (self.p_int[0] is not None)
+    
+    def act116(self):
+        '''
+        add_item(str3, int4, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard116,self.act116))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard116(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None) and (self.p_int[1] is not None)
+    
+    def act117(self):
+        '''
+        add_item(str3, int4, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard117,self.act117))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard117(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None) and (self.p_int[2] is not None)
+    
+    def act118(self):
+        '''
+        add_item(str3, int4, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard118,self.act118))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard118(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None) and (self.p_int[3] is not None)
+    
+    def act119(self):
+        '''
+        add_item(str3, int4, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard119,self.act119))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard119(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None)
+    
+    def act120(self):
+        '''
+        add_item(str4, int0, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard120,self.act120))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard120(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None)
+    
+    def act121(self):
+        '''
+        add_item(str4, int0, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard121,self.act121))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard121(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None) and (self.p_int[1] is not None)
+    
+    def act122(self):
+        '''
+        add_item(str4, int0, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard122,self.act122))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard122(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None) and (self.p_int[2] is not None)
+    
+    def act123(self):
+        '''
+        add_item(str4, int0, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard123,self.act123))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard123(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None) and (self.p_int[3] is not None)
+    
+    def act124(self):
+        '''
+        add_item(str4, int0, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard124,self.act124))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard124(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None) and (self.p_int[4] is not None)
+    
+    def act125(self):
+        '''
+        add_item(str4, int1, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard125,self.act125))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard125(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None) and (self.p_int[0] is not None)
+    
+    def act126(self):
+        '''
+        add_item(str4, int1, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard126,self.act126))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard126(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None)
+    
+    def act127(self):
+        '''
+        add_item(str4, int1, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard127,self.act127))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard127(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None) and (self.p_int[2] is not None)
+    
+    def act128(self):
+        '''
+        add_item(str4, int1, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard128,self.act128))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard128(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None) and (self.p_int[3] is not None)
+    
+    def act129(self):
+        '''
+        add_item(str4, int1, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard129,self.act129))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard129(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None) and (self.p_int[4] is not None)
+    
+    def act130(self):
+        '''
+        add_item(str4, int2, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard130,self.act130))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard130(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None) and (self.p_int[0] is not None)
+    
+    def act131(self):
+        '''
+        add_item(str4, int2, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard131,self.act131))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard131(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None) and (self.p_int[1] is not None)
+    
+    def act132(self):
+        '''
+        add_item(str4, int2, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard132,self.act132))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard132(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None)
+    
+    def act133(self):
+        '''
+        add_item(str4, int2, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard133,self.act133))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard133(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None) and (self.p_int[3] is not None)
+    
+    def act134(self):
+        '''
+        add_item(str4, int2, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard134,self.act134))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard134(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None) and (self.p_int[4] is not None)
+    
+    def act135(self):
+        '''
+        add_item(str4, int3, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard135,self.act135))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard135(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None) and (self.p_int[0] is not None)
+    
+    def act136(self):
+        '''
+        add_item(str4, int3, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard136,self.act136))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard136(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None) and (self.p_int[1] is not None)
+    
+    def act137(self):
+        '''
+        add_item(str4, int3, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard137,self.act137))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard137(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None) and (self.p_int[2] is not None)
+    
+    def act138(self):
+        '''
+        add_item(str4, int3, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard138,self.act138))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard138(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None)
+    
+    def act139(self):
+        '''
+        add_item(str4, int3, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard139,self.act139))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard139(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None) and (self.p_int[4] is not None)
+    
+    def act140(self):
+        '''
+        add_item(str4, int4, int0, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard140,self.act140))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard140(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None) and (self.p_int[0] is not None)
+    
+    def act141(self):
+        '''
+        add_item(str4, int4, int1, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard141,self.act141))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard141(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None) and (self.p_int[1] is not None)
+    
+    def act142(self):
+        '''
+        add_item(str4, int4, int2, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard142,self.act142))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard142(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None) and (self.p_int[2] is not None)
+    
+    def act143(self):
+        '''
+        add_item(str4, int4, int3, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard143,self.act143))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard143(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None) and (self.p_int[3] is not None)
+    
+    def act144(self):
+        '''
+        add_item(str4, int4, int4, 1)  # Using default category ID for simplicity
+        '''
+        self.__test.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard144,self.act144))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard144(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None)
+    
+    def act145(self):
+        '''
+        %action%
+        '''
+        self.__test.append(('''%action% ''',self.guard145,self.act145))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''%action% '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            %action%
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard145(self):
+        return True
+    
+    def act146(self):
+        '''
+        choice = {0..4}
+        '''
+        self.__test.append(('''choice = {0..4} ''',self.guard146,self.act146))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''choice = {0..4} '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            choice = {0..4}
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard146(self):
+        return True
+    
+    def act147(self):
+        '''
+        update_item(str0, quantity=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], quantity=self.p_int[0]) ''',self.guard147,self.act147))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], quantity=self.p_int[0]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], quantity=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard147(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None)
+    
+    def act148(self):
+        '''
+        update_item(str0, quantity=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], quantity=self.p_int[1]) ''',self.guard148,self.act148))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], quantity=self.p_int[1]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], quantity=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard148(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None)
+    
+    def act149(self):
+        '''
+        update_item(str0, quantity=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], quantity=self.p_int[2]) ''',self.guard149,self.act149))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], quantity=self.p_int[2]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], quantity=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard149(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None)
+    
+    def act150(self):
+        '''
+        update_item(str0, quantity=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], quantity=self.p_int[3]) ''',self.guard150,self.act150))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], quantity=self.p_int[3]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], quantity=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard150(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None)
+    
+    def act151(self):
+        '''
+        update_item(str0, quantity=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], quantity=self.p_int[4]) ''',self.guard151,self.act151))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], quantity=self.p_int[4]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], quantity=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard151(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None)
+    
+    def act152(self):
+        '''
+        update_item(str1, quantity=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], quantity=self.p_int[0]) ''',self.guard152,self.act152))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], quantity=self.p_int[0]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], quantity=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard152(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None)
+    
+    def act153(self):
+        '''
+        update_item(str1, quantity=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], quantity=self.p_int[1]) ''',self.guard153,self.act153))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], quantity=self.p_int[1]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], quantity=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard153(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None)
+    
+    def act154(self):
+        '''
+        update_item(str1, quantity=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], quantity=self.p_int[2]) ''',self.guard154,self.act154))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], quantity=self.p_int[2]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], quantity=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard154(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None)
+    
+    def act155(self):
+        '''
+        update_item(str1, quantity=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], quantity=self.p_int[3]) ''',self.guard155,self.act155))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], quantity=self.p_int[3]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], quantity=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard155(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None)
+    
+    def act156(self):
+        '''
+        update_item(str1, quantity=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], quantity=self.p_int[4]) ''',self.guard156,self.act156))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], quantity=self.p_int[4]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], quantity=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard156(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None)
+    
+    def act157(self):
+        '''
+        update_item(str2, quantity=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], quantity=self.p_int[0]) ''',self.guard157,self.act157))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], quantity=self.p_int[0]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], quantity=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard157(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None)
+    
+    def act158(self):
+        '''
+        update_item(str2, quantity=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], quantity=self.p_int[1]) ''',self.guard158,self.act158))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], quantity=self.p_int[1]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], quantity=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard158(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None)
+    
+    def act159(self):
+        '''
+        update_item(str2, quantity=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], quantity=self.p_int[2]) ''',self.guard159,self.act159))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], quantity=self.p_int[2]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], quantity=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard159(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None)
+    
+    def act160(self):
+        '''
+        update_item(str2, quantity=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], quantity=self.p_int[3]) ''',self.guard160,self.act160))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], quantity=self.p_int[3]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], quantity=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard160(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None)
+    
+    def act161(self):
+        '''
+        update_item(str2, quantity=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], quantity=self.p_int[4]) ''',self.guard161,self.act161))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], quantity=self.p_int[4]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], quantity=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard161(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None)
+    
+    def act162(self):
+        '''
+        update_item(str3, quantity=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], quantity=self.p_int[0]) ''',self.guard162,self.act162))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], quantity=self.p_int[0]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], quantity=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard162(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None)
+    
+    def act163(self):
+        '''
+        update_item(str3, quantity=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], quantity=self.p_int[1]) ''',self.guard163,self.act163))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], quantity=self.p_int[1]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], quantity=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard163(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None)
+    
+    def act164(self):
+        '''
+        update_item(str3, quantity=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], quantity=self.p_int[2]) ''',self.guard164,self.act164))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], quantity=self.p_int[2]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], quantity=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard164(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None)
+    
+    def act165(self):
+        '''
+        update_item(str3, quantity=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], quantity=self.p_int[3]) ''',self.guard165,self.act165))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], quantity=self.p_int[3]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], quantity=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard165(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None)
+    
+    def act166(self):
+        '''
+        update_item(str3, quantity=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], quantity=self.p_int[4]) ''',self.guard166,self.act166))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], quantity=self.p_int[4]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], quantity=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard166(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None)
+    
+    def act167(self):
+        '''
+        update_item(str4, quantity=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], quantity=self.p_int[0]) ''',self.guard167,self.act167))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], quantity=self.p_int[0]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], quantity=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard167(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None)
+    
+    def act168(self):
+        '''
+        update_item(str4, quantity=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], quantity=self.p_int[1]) ''',self.guard168,self.act168))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], quantity=self.p_int[1]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], quantity=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard168(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None)
+    
+    def act169(self):
+        '''
+        update_item(str4, quantity=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], quantity=self.p_int[2]) ''',self.guard169,self.act169))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], quantity=self.p_int[2]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], quantity=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard169(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None)
+    
+    def act170(self):
+        '''
+        update_item(str4, quantity=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], quantity=self.p_int[3]) ''',self.guard170,self.act170))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], quantity=self.p_int[3]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], quantity=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard170(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None)
+    
+    def act171(self):
+        '''
+        update_item(str4, quantity=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], quantity=self.p_int[4]) ''',self.guard171,self.act171))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], quantity=self.p_int[4]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], quantity=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard171(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None)
+    
+    def act172(self):
+        '''
+        %action%
+        '''
+        self.__test.append(('''%action% ''',self.guard172,self.act172))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''%action% '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            %action%
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard172(self):
+        return True
+    
+    def act173(self):
+        '''
+        choice = {0..4}
+        '''
+        self.__test.append(('''choice = {0..4} ''',self.guard173,self.act173))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''choice = {0..4} '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            choice = {0..4}
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard173(self):
+        return True
+    
+    def act174(self):
+        '''
+        update_item(str0, price=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], price=self.p_int[0]) ''',self.guard174,self.act174))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], price=self.p_int[0]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], price=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard174(self):
+        return (self.p_str[0] is not None) and (self.p_int[0] is not None)
+    
+    def act175(self):
+        '''
+        update_item(str0, price=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], price=self.p_int[1]) ''',self.guard175,self.act175))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], price=self.p_int[1]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], price=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard175(self):
+        return (self.p_str[0] is not None) and (self.p_int[1] is not None)
+    
+    def act176(self):
+        '''
+        update_item(str0, price=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], price=self.p_int[2]) ''',self.guard176,self.act176))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], price=self.p_int[2]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], price=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard176(self):
+        return (self.p_str[0] is not None) and (self.p_int[2] is not None)
+    
+    def act177(self):
+        '''
+        update_item(str0, price=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], price=self.p_int[3]) ''',self.guard177,self.act177))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], price=self.p_int[3]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], price=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard177(self):
+        return (self.p_str[0] is not None) and (self.p_int[3] is not None)
+    
+    def act178(self):
+        '''
+        update_item(str0, price=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[0], price=self.p_int[4]) ''',self.guard178,self.act178))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[0], price=self.p_int[4]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[0], price=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard178(self):
+        return (self.p_str[0] is not None) and (self.p_int[4] is not None)
+    
+    def act179(self):
+        '''
+        update_item(str1, price=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], price=self.p_int[0]) ''',self.guard179,self.act179))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], price=self.p_int[0]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], price=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard179(self):
+        return (self.p_str[1] is not None) and (self.p_int[0] is not None)
+    
+    def act180(self):
+        '''
+        update_item(str1, price=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], price=self.p_int[1]) ''',self.guard180,self.act180))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], price=self.p_int[1]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], price=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard180(self):
+        return (self.p_str[1] is not None) and (self.p_int[1] is not None)
+    
+    def act181(self):
+        '''
+        update_item(str1, price=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], price=self.p_int[2]) ''',self.guard181,self.act181))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], price=self.p_int[2]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], price=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard181(self):
+        return (self.p_str[1] is not None) and (self.p_int[2] is not None)
+    
+    def act182(self):
+        '''
+        update_item(str1, price=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], price=self.p_int[3]) ''',self.guard182,self.act182))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], price=self.p_int[3]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], price=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard182(self):
+        return (self.p_str[1] is not None) and (self.p_int[3] is not None)
+    
+    def act183(self):
+        '''
+        update_item(str1, price=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[1], price=self.p_int[4]) ''',self.guard183,self.act183))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[1], price=self.p_int[4]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[1], price=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard183(self):
+        return (self.p_str[1] is not None) and (self.p_int[4] is not None)
+    
+    def act184(self):
+        '''
+        update_item(str2, price=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], price=self.p_int[0]) ''',self.guard184,self.act184))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], price=self.p_int[0]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], price=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard184(self):
+        return (self.p_str[2] is not None) and (self.p_int[0] is not None)
+    
+    def act185(self):
+        '''
+        update_item(str2, price=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], price=self.p_int[1]) ''',self.guard185,self.act185))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], price=self.p_int[1]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], price=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard185(self):
+        return (self.p_str[2] is not None) and (self.p_int[1] is not None)
+    
+    def act186(self):
+        '''
+        update_item(str2, price=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], price=self.p_int[2]) ''',self.guard186,self.act186))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], price=self.p_int[2]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], price=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard186(self):
+        return (self.p_str[2] is not None) and (self.p_int[2] is not None)
+    
+    def act187(self):
+        '''
+        update_item(str2, price=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], price=self.p_int[3]) ''',self.guard187,self.act187))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], price=self.p_int[3]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], price=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard187(self):
+        return (self.p_str[2] is not None) and (self.p_int[3] is not None)
+    
+    def act188(self):
+        '''
+        update_item(str2, price=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[2], price=self.p_int[4]) ''',self.guard188,self.act188))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[2], price=self.p_int[4]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[2], price=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard188(self):
+        return (self.p_str[2] is not None) and (self.p_int[4] is not None)
+    
+    def act189(self):
+        '''
+        update_item(str3, price=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], price=self.p_int[0]) ''',self.guard189,self.act189))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], price=self.p_int[0]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], price=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard189(self):
+        return (self.p_str[3] is not None) and (self.p_int[0] is not None)
+    
+    def act190(self):
+        '''
+        update_item(str3, price=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], price=self.p_int[1]) ''',self.guard190,self.act190))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], price=self.p_int[1]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], price=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard190(self):
+        return (self.p_str[3] is not None) and (self.p_int[1] is not None)
+    
+    def act191(self):
+        '''
+        update_item(str3, price=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], price=self.p_int[2]) ''',self.guard191,self.act191))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], price=self.p_int[2]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], price=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard191(self):
+        return (self.p_str[3] is not None) and (self.p_int[2] is not None)
+    
+    def act192(self):
+        '''
+        update_item(str3, price=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], price=self.p_int[3]) ''',self.guard192,self.act192))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], price=self.p_int[3]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], price=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard192(self):
+        return (self.p_str[3] is not None) and (self.p_int[3] is not None)
+    
+    def act193(self):
+        '''
+        update_item(str3, price=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[3], price=self.p_int[4]) ''',self.guard193,self.act193))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[3], price=self.p_int[4]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[3], price=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard193(self):
+        return (self.p_str[3] is not None) and (self.p_int[4] is not None)
+    
+    def act194(self):
+        '''
+        update_item(str4, price=int0)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], price=self.p_int[0]) ''',self.guard194,self.act194))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], price=self.p_int[0]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[0]'''] = repr(self.p_int[0]); print(self.prettyName('''self.p_int[0]''') + ' =', __bV['''self.p_int[0]'''], ':',type(self.p_int[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], price=self.p_int[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[0]=True
+            self.nowUsed('''self.p_int[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[0])
+                    if __aV != __bV['''self.p_int[0]''']: print('=>',self.prettyName('''self.p_int[0]''') + ' =',__aV, ':',type(self.p_int[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard194(self):
+        return (self.p_str[4] is not None) and (self.p_int[0] is not None)
+    
+    def act195(self):
+        '''
+        update_item(str4, price=int1)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], price=self.p_int[1]) ''',self.guard195,self.act195))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], price=self.p_int[1]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[1]'''] = repr(self.p_int[1]); print(self.prettyName('''self.p_int[1]''') + ' =', __bV['''self.p_int[1]'''], ':',type(self.p_int[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], price=self.p_int[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[1]=True
+            self.nowUsed('''self.p_int[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[1])
+                    if __aV != __bV['''self.p_int[1]''']: print('=>',self.prettyName('''self.p_int[1]''') + ' =',__aV, ':',type(self.p_int[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard195(self):
+        return (self.p_str[4] is not None) and (self.p_int[1] is not None)
+    
+    def act196(self):
+        '''
+        update_item(str4, price=int2)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], price=self.p_int[2]) ''',self.guard196,self.act196))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], price=self.p_int[2]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[2]'''] = repr(self.p_int[2]); print(self.prettyName('''self.p_int[2]''') + ' =', __bV['''self.p_int[2]'''], ':',type(self.p_int[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], price=self.p_int[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[2]=True
+            self.nowUsed('''self.p_int[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[2])
+                    if __aV != __bV['''self.p_int[2]''']: print('=>',self.prettyName('''self.p_int[2]''') + ' =',__aV, ':',type(self.p_int[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard196(self):
+        return (self.p_str[4] is not None) and (self.p_int[2] is not None)
+    
+    def act197(self):
+        '''
+        update_item(str4, price=int3)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], price=self.p_int[3]) ''',self.guard197,self.act197))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], price=self.p_int[3]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[3]'''] = repr(self.p_int[3]); print(self.prettyName('''self.p_int[3]''') + ' =', __bV['''self.p_int[3]'''], ':',type(self.p_int[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], price=self.p_int[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[3]=True
+            self.nowUsed('''self.p_int[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[3])
+                    if __aV != __bV['''self.p_int[3]''']: print('=>',self.prettyName('''self.p_int[3]''') + ' =',__aV, ':',type(self.p_int[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard197(self):
+        return (self.p_str[4] is not None) and (self.p_int[3] is not None)
+    
+    def act198(self):
+        '''
+        update_item(str4, price=int4)
+        '''
+        self.__test.append(('''update_item(self.p_str[4], price=self.p_int[4]) ''',self.guard198,self.act198))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''update_item(self.p_str[4], price=self.p_int[4]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+            try: __bV['''self.p_int[4]'''] = repr(self.p_int[4]); print(self.prettyName('''self.p_int[4]''') + ' =', __bV['''self.p_int[4]'''], ':',type(self.p_int[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            update_item(self.p_str[4], price=self.p_int[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            self.p_int_used[4]=True
+            self.nowUsed('''self.p_int[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+                try:
+                    __aV = repr(self.p_int[4])
+                    if __aV != __bV['''self.p_int[4]''']: print('=>',self.prettyName('''self.p_int[4]''') + ' =',__aV, ':',type(self.p_int[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard198(self):
+        return (self.p_str[4] is not None) and (self.p_int[4] is not None)
+    
+    def act199(self):
+        '''
+        %action%
+        '''
+        self.__test.append(('''%action% ''',self.guard199,self.act199))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''%action% '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            %action%
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard199(self):
+        return True
+    
+    def act200(self):
+        '''
+        choice = {0..4}
+        '''
+        self.__test.append(('''choice = {0..4} ''',self.guard200,self.act200))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''choice = {0..4} '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            choice = {0..4}
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard200(self):
+        return True
+    
+    def act201(self):
+        '''
+        delete_item(str0)
+        '''
+        self.__test.append(('''delete_item(self.p_str[0]) ''',self.guard201,self.act201))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''delete_item(self.p_str[0]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            delete_item(self.p_str[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard201(self):
+        return (self.p_str[0] is not None)
+    
+    def act202(self):
+        '''
+        delete_item(str1)
+        '''
+        self.__test.append(('''delete_item(self.p_str[1]) ''',self.guard202,self.act202))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''delete_item(self.p_str[1]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            delete_item(self.p_str[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard202(self):
+        return (self.p_str[1] is not None)
+    
+    def act203(self):
+        '''
+        delete_item(str2)
+        '''
+        self.__test.append(('''delete_item(self.p_str[2]) ''',self.guard203,self.act203))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''delete_item(self.p_str[2]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            delete_item(self.p_str[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard203(self):
+        return (self.p_str[2] is not None)
+    
+    def act204(self):
+        '''
+        delete_item(str3)
+        '''
+        self.__test.append(('''delete_item(self.p_str[3]) ''',self.guard204,self.act204))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''delete_item(self.p_str[3]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            delete_item(self.p_str[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard204(self):
+        return (self.p_str[3] is not None)
+    
+    def act205(self):
+        '''
+        delete_item(str4)
+        '''
+        self.__test.append(('''delete_item(self.p_str[4]) ''',self.guard205,self.act205))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''delete_item(self.p_str[4]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            delete_item(self.p_str[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard205(self):
+        return (self.p_str[4] is not None)
+    
+    def act206(self):
+        '''
+        %action%
+        '''
+        self.__test.append(('''%action% ''',self.guard206,self.act206))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''%action% '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            %action%
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard206(self):
+        return True
+    
+    def act207(self):
+        '''
+        item = get_item(str0)
+        '''
+        self.__test.append(('''item = get_item(self.p_str[0]) ''',self.guard207,self.act207))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''item = get_item(self.p_str[0]) '''))
+            try: __bV['''self.p_str[0]'''] = repr(self.p_str[0]); print(self.prettyName('''self.p_str[0]''') + ' =', __bV['''self.p_str[0]'''], ':',type(self.p_str[0]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            item = get_item(self.p_str[0])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[0]=True
+            self.nowUsed('''self.p_str[0]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[0])
+                    if __aV != __bV['''self.p_str[0]''']: print('=>',self.prettyName('''self.p_str[0]''') + ' =',__aV, ':',type(self.p_str[0]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard207(self):
+        return (self.p_str[0] is not None)
+    
+    def act208(self):
+        '''
+        item = get_item(str1)
+        '''
+        self.__test.append(('''item = get_item(self.p_str[1]) ''',self.guard208,self.act208))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''item = get_item(self.p_str[1]) '''))
+            try: __bV['''self.p_str[1]'''] = repr(self.p_str[1]); print(self.prettyName('''self.p_str[1]''') + ' =', __bV['''self.p_str[1]'''], ':',type(self.p_str[1]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            item = get_item(self.p_str[1])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[1]=True
+            self.nowUsed('''self.p_str[1]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[1])
+                    if __aV != __bV['''self.p_str[1]''']: print('=>',self.prettyName('''self.p_str[1]''') + ' =',__aV, ':',type(self.p_str[1]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard208(self):
+        return (self.p_str[1] is not None)
+    
+    def act209(self):
+        '''
+        item = get_item(str2)
+        '''
+        self.__test.append(('''item = get_item(self.p_str[2]) ''',self.guard209,self.act209))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''item = get_item(self.p_str[2]) '''))
+            try: __bV['''self.p_str[2]'''] = repr(self.p_str[2]); print(self.prettyName('''self.p_str[2]''') + ' =', __bV['''self.p_str[2]'''], ':',type(self.p_str[2]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            item = get_item(self.p_str[2])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[2]=True
+            self.nowUsed('''self.p_str[2]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[2])
+                    if __aV != __bV['''self.p_str[2]''']: print('=>',self.prettyName('''self.p_str[2]''') + ' =',__aV, ':',type(self.p_str[2]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard209(self):
+        return (self.p_str[2] is not None)
+    
+    def act210(self):
+        '''
+        item = get_item(str3)
+        '''
+        self.__test.append(('''item = get_item(self.p_str[3]) ''',self.guard210,self.act210))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''item = get_item(self.p_str[3]) '''))
+            try: __bV['''self.p_str[3]'''] = repr(self.p_str[3]); print(self.prettyName('''self.p_str[3]''') + ' =', __bV['''self.p_str[3]'''], ':',type(self.p_str[3]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            item = get_item(self.p_str[3])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[3]=True
+            self.nowUsed('''self.p_str[3]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[3])
+                    if __aV != __bV['''self.p_str[3]''']: print('=>',self.prettyName('''self.p_str[3]''') + ' =',__aV, ':',type(self.p_str[3]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard210(self):
+        return (self.p_str[3] is not None)
+    
+    def act211(self):
+        '''
+        item = get_item(str4)
+        '''
+        self.__test.append(('''item = get_item(self.p_str[4]) ''',self.guard211,self.act211))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''item = get_item(self.p_str[4]) '''))
+            try: __bV['''self.p_str[4]'''] = repr(self.p_str[4]); print(self.prettyName('''self.p_str[4]''') + ' =', __bV['''self.p_str[4]'''], ':',type(self.p_str[4]))
+            except: pass
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            item = get_item(self.p_str[4])
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            self.p_str_used[4]=True
+            self.nowUsed('''self.p_str[4]''')
+            try: test_after_each(self)
+            except: pass
+            if self.__verboseActions:
+                try:
+                    __aV = repr(self.p_str[4])
+                    if __aV != __bV['''self.p_str[4]''']: print('=>',self.prettyName('''self.p_str[4]''') + ' =',__aV, ':',type(self.p_str[4]))
+                except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard211(self):
+        return (self.p_str[4] is not None)
+    
+    def act212(self):
+        '''
+        %action%
+        '''
+        self.__test.append(('''%action% ''',self.guard212,self.act212))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''%action% '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            %action%
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard212(self):
+        return True
+    
+    def act213(self):
+        '''
+        items = get_items()
+        '''
+        self.__test.append(('''items = get_items() ''',self.guard213,self.act213))
+        self.__raised = None
+        self.__refRaised = None
+        if self.__verboseActions:
+            __bV = {}
+            print('ACTION:',self.prettyName('''items = get_items() '''))
+        if self.__collectCov: self.__cov.start()
+        try: test_before_each(self)
+        except: pass
+        try:
+            items = get_items()
+        except Exception as exc:
+            raised = exc
+            if self.__verboseActions: print('RAISED EXCEPTION:',type(raised),raised)
+            raise
+        finally:
+            try: self.__raised = raised
+            except: pass
+            try: test_after_each(self)
+            except: pass
+            if self.__collectCov: self.__cov.stop(); self.__updateCov()
+        if self.__verboseActions: print('='*50)
+    def guard213(self):
+        return True
+    
     def __init__(self):
         try:
             test_before_all(self)
@@ -494,7 +10270,6 @@ class sut(object):
             pass
         self.__modules = []
         self.__importModules = []
-        self.__importModules.append(database)
         self.__features = []
         self.__replayBacktrack = False
         self.__cov = coverage.coverage(branch=True, source=self.moduleLocations(),    omit='sut.py'    )
@@ -521,6 +10296,30 @@ class sut(object):
         self.__poolsUsed = set([])
         self.__disabledByNone = set([])
         self.__disabledByUsed = set([])
+        self.p_str = {}
+        self.p_str_used = {}
+        self.p_str[0] = None
+        self.p_str_used[0] = True
+        self.p_str[1] = None
+        self.p_str_used[1] = True
+        self.p_str[2] = None
+        self.p_str_used[2] = True
+        self.p_str[3] = None
+        self.p_str_used[3] = True
+        self.p_str[4] = None
+        self.p_str_used[4] = True
+        self.p_int = {}
+        self.p_int_used = {}
+        self.p_int[0] = None
+        self.p_int_used[0] = True
+        self.p_int[1] = None
+        self.p_int_used[1] = True
+        self.p_int[2] = None
+        self.p_int_used[2] = True
+        self.p_int[3] = None
+        self.p_int_used[3] = True
+        self.p_int[4] = None
+        self.p_int_used[4] = True
         self.p_item = {}
         self.p_item_used = {}
         self.p_item[0] = None
@@ -529,22 +10328,13 @@ class sut(object):
         self.p_item_used[1] = True
         self.p_item[2] = None
         self.p_item_used[2] = True
-        self.p_item[3] = None
-        self.p_item_used[3] = True
-        self.p_item[4] = None
-        self.p_item_used[4] = True
-        self.p_item[5] = None
-        self.p_item_used[5] = True
-        self.p_item[6] = None
-        self.p_item_used[6] = True
-        self.p_item[7] = None
-        self.p_item_used[7] = True
-        self.p_item[8] = None
-        self.p_item_used[8] = True
-        self.p_item[9] = None
-        self.p_item_used[9] = True
+        self.p_category = {}
+        self.p_category_used = {}
+        self.p_category[0] = None
+        self.p_category_used[0] = True
+        self.p_category[1] = None
+        self.p_category_used[1] = True
     # BEGIN INITIALIZATION CODE
-        init:
     # END INITIALIZATION CODE
         self.__SUTName = """database"""
         self.__actions = []
@@ -555,39 +10345,60 @@ class sut(object):
         self.__swarmConfig = None
         self.__actionClasses = []
         self.__essentialClasses = []
-        self.__actionClasses.append('''    database.init_db() ''')
+        self.__actionClasses.append('''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''')
+        self.__actionClasses.append('''<int> := 100, 20, 30, 150, 50 ''')
+        self.__actionClasses.append('''<category> := "Electronics", "Apparel" ''')
+        self.__actionClasses.append('''<item> := {0..4}  # Using indices to refer to items by position ''')
         self.__actionClasses.append('''<action> ''')
-        self.__actionClasses.append('''prob: 0.25 ''')
-        self.__actionClasses.append('''database.add_item("item", 10.0, 100) ''')
+        self.__actionClasses.append('''add_category(<category>) ''')
         self.__actionClasses.append('''<action> ''')
-        self.__actionClasses.append('''prob: 0.25 ''')
-        self.__actionClasses.append('''database.delete_item("item") ''')
+        self.__actionClasses.append('''choice := {0..4} ''')
+        self.__actionClasses.append('''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity ''')
         self.__actionClasses.append('''<action> ''')
-        self.__actionClasses.append('''prob: 0.25 ''')
-        self.__actionClasses.append('''database.update_item("item", quantity=50) ''')
+        self.__actionClasses.append('''choice := {0..4} ''')
+        self.__actionClasses.append('''update_item(<str>, quantity=<int>) ''')
         self.__actionClasses.append('''<action> ''')
-        self.__actionClasses.append('''prob: 0.25 ''')
-        self.__actionClasses.append('''database.get_item("item") ''')
-        self.__actionClasses.append('''    database.get_items() is not None ''')
-        self.__actionClasses.append('''cleanup: ''')
-        self.__actionClasses.append('''    database.clear_db()  # Assuming you have a method to clear the database ''')
+        self.__actionClasses.append('''choice := {0..4} ''')
+        self.__actionClasses.append('''update_item(<str>, price=<int>) ''')
+        self.__actionClasses.append('''<action> ''')
+        self.__actionClasses.append('''choice := {0..4} ''')
+        self.__actionClasses.append('''delete_item(<str>) ''')
+        self.__actionClasses.append('''<action> ''')
+        self.__actionClasses.append('''item := get_item(<str>) ''')
+        self.__actionClasses.append('''<action> ''')
+        self.__actionClasses.append('''items := get_items() ''')
         self.__dependencies = {}
-        self.__dependencies['''    database.init_db() '''] = []
+        self.__dependencies['''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = []
+        self.__dependencies['''<int> := 100, 20, 30, 150, 50 '''] = []
+        self.__dependencies['''<category> := "Electronics", "Apparel" '''] = []
+        self.__dependencies['''<item> := {0..4}  # Using indices to refer to items by position '''] = []
         self.__dependencies['''<action> '''] = []
-        self.__dependencies['''prob: 0.25 '''] = []
-        self.__dependencies['''database.add_item("item", 10.0, 100) '''] = []
+        self.__dependencies['''add_category(<category>) '''] = []
+        self.__dependencies['''add_category(<category>) '''].append(['<category> := "Electronics", "Apparel" '])
         self.__dependencies['''<action> '''] = []
-        self.__dependencies['''prob: 0.25 '''] = []
-        self.__dependencies['''database.delete_item("item") '''] = []
+        self.__dependencies['''choice := {0..4} '''] = []
+        self.__dependencies['''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''] = []
+        self.__dependencies['''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''].append(['<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '])
+        self.__dependencies['''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''].append(['<int> := 100, 20, 30, 150, 50 '])
         self.__dependencies['''<action> '''] = []
-        self.__dependencies['''prob: 0.25 '''] = []
-        self.__dependencies['''database.update_item("item", quantity=50) '''] = []
+        self.__dependencies['''choice := {0..4} '''] = []
+        self.__dependencies['''update_item(<str>, quantity=<int>) '''] = []
+        self.__dependencies['''update_item(<str>, quantity=<int>) '''].append(['<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '])
+        self.__dependencies['''update_item(<str>, quantity=<int>) '''].append(['<int> := 100, 20, 30, 150, 50 '])
         self.__dependencies['''<action> '''] = []
-        self.__dependencies['''prob: 0.25 '''] = []
-        self.__dependencies['''database.get_item("item") '''] = []
-        self.__dependencies['''    database.get_items() is not None '''] = []
-        self.__dependencies['''cleanup: '''] = []
-        self.__dependencies['''    database.clear_db()  # Assuming you have a method to clear the database '''] = []
+        self.__dependencies['''choice := {0..4} '''] = []
+        self.__dependencies['''update_item(<str>, price=<int>) '''] = []
+        self.__dependencies['''update_item(<str>, price=<int>) '''].append(['<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '])
+        self.__dependencies['''update_item(<str>, price=<int>) '''].append(['<int> := 100, 20, 30, 150, 50 '])
+        self.__dependencies['''<action> '''] = []
+        self.__dependencies['''choice := {0..4} '''] = []
+        self.__dependencies['''delete_item(<str>) '''] = []
+        self.__dependencies['''delete_item(<str>) '''].append(['<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '])
+        self.__dependencies['''<action> '''] = []
+        self.__dependencies['''item := get_item(<str>) '''] = []
+        self.__dependencies['''item := get_item(<str>) '''].append(['<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '])
+        self.__dependencies['''<action> '''] = []
+        self.__dependencies['''items := get_items() '''] = []
         self.__orderings = {}
         self.__okExcepts = {}
         self.__preCode = {}
@@ -613,130 +10424,1838 @@ class sut(object):
         self.__consts = []
         self.__opaque = []
         self.__abstraction = {}
-        self.__psize["item"] = 10
+        self.__psize["str"] = 5
+        self.__pools.append("self.p_str")
+        self.__psize["int"] = 5
+        self.__pools.append("self.p_int")
+        self.__psize["item"] = 3
         self.__pools.append("self.p_item")
+        self.__psize["category"] = 2
+        self.__pools.append("self.p_category")
+        self.__poolUsers['''self.p_category[0]'''] = set([])
+        self.__poolUsers['''self.p_category[0]'''].add('''add_category(self.p_category[0]) ''')
+        self.__poolUsers['''self.p_category[1]'''] = set([])
+        self.__poolUsers['''self.p_category[1]'''].add('''add_category(self.p_category[1]) ''')
+        self.__poolUsers['''self.p_str[0]'''] = set([])
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''update_item(self.p_str[0], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''delete_item(self.p_str[0]) ''')
+        self.__poolUsers['''self.p_str[0]'''].add('''item = get_item(self.p_str[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''] = set([])
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[0], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[1], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[2], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[3], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[4], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[0], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[1], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[2], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[3], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[0]'''].add('''update_item(self.p_str[4], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_int[1]'''] = set([])
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[0], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[1], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[2], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[3], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[4], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[0], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[1], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[2], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[3], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[1]'''].add('''update_item(self.p_str[4], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_int[2]'''] = set([])
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[0], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[1], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[2], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[3], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[4], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[0], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[1], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[2], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[3], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[2]'''].add('''update_item(self.p_str[4], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_int[3]'''] = set([])
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[0], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[1], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[2], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[3], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[4], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[0], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[1], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[2], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[3], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[3]'''].add('''update_item(self.p_str[4], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_int[4]'''] = set([])
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[0], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[1], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[2], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[3], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[4], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[0], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[1], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[2], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[3], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_int[4]'''].add('''update_item(self.p_str[4], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[1]'''] = set([])
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''update_item(self.p_str[1], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''delete_item(self.p_str[1]) ''')
+        self.__poolUsers['''self.p_str[1]'''].add('''item = get_item(self.p_str[1]) ''')
+        self.__poolUsers['''self.p_str[2]'''] = set([])
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''update_item(self.p_str[2], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''delete_item(self.p_str[2]) ''')
+        self.__poolUsers['''self.p_str[2]'''].add('''item = get_item(self.p_str[2]) ''')
+        self.__poolUsers['''self.p_str[3]'''] = set([])
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''update_item(self.p_str[3], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''delete_item(self.p_str[3]) ''')
+        self.__poolUsers['''self.p_str[3]'''].add('''item = get_item(self.p_str[3]) ''')
+        self.__poolUsers['''self.p_str[4]'''] = set([])
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], quantity=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], quantity=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], quantity=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], quantity=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], quantity=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], price=self.p_int[0]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], price=self.p_int[1]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], price=self.p_int[2]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], price=self.p_int[3]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''update_item(self.p_str[4], price=self.p_int[4]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''delete_item(self.p_str[4]) ''')
+        self.__poolUsers['''self.p_str[4]'''].add('''item = get_item(self.p_str[4]) ''')
+        self.__poolInitializers['''self.p_str[0]'''] = set([])
+        self.__poolInitializers['''self.p_str[0]'''].add('''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''')
+        self.__poolInitializers['''self.p_str[1]'''] = set([])
+        self.__poolInitializers['''self.p_str[1]'''].add('''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''')
+        self.__poolInitializers['''self.p_str[2]'''] = set([])
+        self.__poolInitializers['''self.p_str[2]'''].add('''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''')
+        self.__poolInitializers['''self.p_str[3]'''] = set([])
+        self.__poolInitializers['''self.p_str[3]'''].add('''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''')
+        self.__poolInitializers['''self.p_str[4]'''] = set([])
+        self.__poolInitializers['''self.p_str[4]'''].add('''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''')
+        self.__poolInitializers['''self.p_int[0]'''] = set([])
+        self.__poolInitializers['''self.p_int[0]'''].add('''self.p_int[0] = 100, 20, 30, 150, 50 ''')
+        self.__poolInitializers['''self.p_int[1]'''] = set([])
+        self.__poolInitializers['''self.p_int[1]'''].add('''self.p_int[1] = 100, 20, 30, 150, 50 ''')
+        self.__poolInitializers['''self.p_int[2]'''] = set([])
+        self.__poolInitializers['''self.p_int[2]'''].add('''self.p_int[2] = 100, 20, 30, 150, 50 ''')
+        self.__poolInitializers['''self.p_int[3]'''] = set([])
+        self.__poolInitializers['''self.p_int[3]'''].add('''self.p_int[3] = 100, 20, 30, 150, 50 ''')
+        self.__poolInitializers['''self.p_int[4]'''] = set([])
+        self.__poolInitializers['''self.p_int[4]'''].add('''self.p_int[4] = 100, 20, 30, 150, 50 ''')
+        self.__poolInitializers['''self.p_category[0]'''] = set([])
+        self.__poolInitializers['''self.p_category[0]'''].add('''self.p_category[0] = "Electronics", "Apparel" ''')
+        self.__poolInitializers['''self.p_category[1]'''] = set([])
+        self.__poolInitializers['''self.p_category[1]'''].add('''self.p_category[1] = "Electronics", "Apparel" ''')
+        self.__poolInitializers['''self.p_item[0]'''] = set([])
+        self.__poolInitializers['''self.p_item[0]'''].add('''self.p_item[0] = {0..4}  # Using indices to refer to items by position ''')
+        self.__poolInitializers['''self.p_item[1]'''] = set([])
+        self.__poolInitializers['''self.p_item[1]'''].add('''self.p_item[1] = {0..4}  # Using indices to refer to items by position ''')
+        self.__poolInitializers['''self.p_item[2]'''] = set([])
+        self.__poolInitializers['''self.p_item[2]'''].add('''self.p_item[2] = {0..4}  # Using indices to refer to items by position ''')
         if self.__useCould: self.computeInitialEnabled()
         
-        self.__actions.append(('''database.init_db() ''',self.guard0,self.act0))
-        self.__names['''database.init_db() '''] = ('''database.init_db() ''',self.guard0,self.act0)
-        self.__actionClass['''database.init_db() '''] = '''    database.init_db() '''
-        self.__orderings['''database.init_db() '''] = 1
-        self.__okExcepts['''database.init_db() '''] = ''''''
+        self.__actions.append(('''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard0,self.act0))
+        self.__names['''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ('''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard0,self.act0)
+        self.__actionClass['''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = '''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''
+        self.__orderings['''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = 1
+        self.__okExcepts['''self.p_str[0] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ''''''
         
-        self.__actions.append(('''%action% ''',self.guard1,self.act1))
-        self.__names['''%action% '''] = ('''%action% ''',self.guard1,self.act1)
+        self.__actions.append(('''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard1,self.act1))
+        self.__names['''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ('''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard1,self.act1)
+        self.__actionClass['''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = '''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''
+        self.__orderings['''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = 2
+        self.__okExcepts['''self.p_str[1] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ''''''
+        
+        self.__actions.append(('''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard2,self.act2))
+        self.__names['''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ('''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard2,self.act2)
+        self.__actionClass['''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = '''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''
+        self.__orderings['''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = 3
+        self.__okExcepts['''self.p_str[2] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ''''''
+        
+        self.__actions.append(('''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard3,self.act3))
+        self.__names['''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ('''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard3,self.act3)
+        self.__actionClass['''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = '''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''
+        self.__orderings['''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = 4
+        self.__okExcepts['''self.p_str[3] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ''''''
+        
+        self.__actions.append(('''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard4,self.act4))
+        self.__names['''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ('''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" ''',self.guard4,self.act4)
+        self.__actionClass['''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = '''<str> := "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''
+        self.__orderings['''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = 5
+        self.__okExcepts['''self.p_str[4] = "Keyboard", "Mouse", "Monitor", "Laptop", "Camera" '''] = ''''''
+        
+        self.__actions.append(('''self.p_int[0] = 100, 20, 30, 150, 50 ''',self.guard5,self.act5))
+        self.__names['''self.p_int[0] = 100, 20, 30, 150, 50 '''] = ('''self.p_int[0] = 100, 20, 30, 150, 50 ''',self.guard5,self.act5)
+        self.__actionClass['''self.p_int[0] = 100, 20, 30, 150, 50 '''] = '''<int> := 100, 20, 30, 150, 50 '''
+        self.__orderings['''self.p_int[0] = 100, 20, 30, 150, 50 '''] = 6
+        self.__okExcepts['''self.p_int[0] = 100, 20, 30, 150, 50 '''] = ''''''
+        
+        self.__actions.append(('''self.p_int[1] = 100, 20, 30, 150, 50 ''',self.guard6,self.act6))
+        self.__names['''self.p_int[1] = 100, 20, 30, 150, 50 '''] = ('''self.p_int[1] = 100, 20, 30, 150, 50 ''',self.guard6,self.act6)
+        self.__actionClass['''self.p_int[1] = 100, 20, 30, 150, 50 '''] = '''<int> := 100, 20, 30, 150, 50 '''
+        self.__orderings['''self.p_int[1] = 100, 20, 30, 150, 50 '''] = 7
+        self.__okExcepts['''self.p_int[1] = 100, 20, 30, 150, 50 '''] = ''''''
+        
+        self.__actions.append(('''self.p_int[2] = 100, 20, 30, 150, 50 ''',self.guard7,self.act7))
+        self.__names['''self.p_int[2] = 100, 20, 30, 150, 50 '''] = ('''self.p_int[2] = 100, 20, 30, 150, 50 ''',self.guard7,self.act7)
+        self.__actionClass['''self.p_int[2] = 100, 20, 30, 150, 50 '''] = '''<int> := 100, 20, 30, 150, 50 '''
+        self.__orderings['''self.p_int[2] = 100, 20, 30, 150, 50 '''] = 8
+        self.__okExcepts['''self.p_int[2] = 100, 20, 30, 150, 50 '''] = ''''''
+        
+        self.__actions.append(('''self.p_int[3] = 100, 20, 30, 150, 50 ''',self.guard8,self.act8))
+        self.__names['''self.p_int[3] = 100, 20, 30, 150, 50 '''] = ('''self.p_int[3] = 100, 20, 30, 150, 50 ''',self.guard8,self.act8)
+        self.__actionClass['''self.p_int[3] = 100, 20, 30, 150, 50 '''] = '''<int> := 100, 20, 30, 150, 50 '''
+        self.__orderings['''self.p_int[3] = 100, 20, 30, 150, 50 '''] = 9
+        self.__okExcepts['''self.p_int[3] = 100, 20, 30, 150, 50 '''] = ''''''
+        
+        self.__actions.append(('''self.p_int[4] = 100, 20, 30, 150, 50 ''',self.guard9,self.act9))
+        self.__names['''self.p_int[4] = 100, 20, 30, 150, 50 '''] = ('''self.p_int[4] = 100, 20, 30, 150, 50 ''',self.guard9,self.act9)
+        self.__actionClass['''self.p_int[4] = 100, 20, 30, 150, 50 '''] = '''<int> := 100, 20, 30, 150, 50 '''
+        self.__orderings['''self.p_int[4] = 100, 20, 30, 150, 50 '''] = 10
+        self.__okExcepts['''self.p_int[4] = 100, 20, 30, 150, 50 '''] = ''''''
+        
+        self.__actions.append(('''self.p_category[0] = "Electronics", "Apparel" ''',self.guard10,self.act10))
+        self.__names['''self.p_category[0] = "Electronics", "Apparel" '''] = ('''self.p_category[0] = "Electronics", "Apparel" ''',self.guard10,self.act10)
+        self.__actionClass['''self.p_category[0] = "Electronics", "Apparel" '''] = '''<category> := "Electronics", "Apparel" '''
+        self.__orderings['''self.p_category[0] = "Electronics", "Apparel" '''] = 11
+        self.__okExcepts['''self.p_category[0] = "Electronics", "Apparel" '''] = ''''''
+        
+        self.__actions.append(('''self.p_category[1] = "Electronics", "Apparel" ''',self.guard11,self.act11))
+        self.__names['''self.p_category[1] = "Electronics", "Apparel" '''] = ('''self.p_category[1] = "Electronics", "Apparel" ''',self.guard11,self.act11)
+        self.__actionClass['''self.p_category[1] = "Electronics", "Apparel" '''] = '''<category> := "Electronics", "Apparel" '''
+        self.__orderings['''self.p_category[1] = "Electronics", "Apparel" '''] = 12
+        self.__okExcepts['''self.p_category[1] = "Electronics", "Apparel" '''] = ''''''
+        
+        self.__actions.append(('''self.p_item[0] = {0..4}  # Using indices to refer to items by position ''',self.guard12,self.act12))
+        self.__names['''self.p_item[0] = {0..4}  # Using indices to refer to items by position '''] = ('''self.p_item[0] = {0..4}  # Using indices to refer to items by position ''',self.guard12,self.act12)
+        self.__actionClass['''self.p_item[0] = {0..4}  # Using indices to refer to items by position '''] = '''<item> := {0..4}  # Using indices to refer to items by position '''
+        self.__orderings['''self.p_item[0] = {0..4}  # Using indices to refer to items by position '''] = 13
+        self.__okExcepts['''self.p_item[0] = {0..4}  # Using indices to refer to items by position '''] = ''''''
+        
+        self.__actions.append(('''self.p_item[1] = {0..4}  # Using indices to refer to items by position ''',self.guard13,self.act13))
+        self.__names['''self.p_item[1] = {0..4}  # Using indices to refer to items by position '''] = ('''self.p_item[1] = {0..4}  # Using indices to refer to items by position ''',self.guard13,self.act13)
+        self.__actionClass['''self.p_item[1] = {0..4}  # Using indices to refer to items by position '''] = '''<item> := {0..4}  # Using indices to refer to items by position '''
+        self.__orderings['''self.p_item[1] = {0..4}  # Using indices to refer to items by position '''] = 14
+        self.__okExcepts['''self.p_item[1] = {0..4}  # Using indices to refer to items by position '''] = ''''''
+        
+        self.__actions.append(('''self.p_item[2] = {0..4}  # Using indices to refer to items by position ''',self.guard14,self.act14))
+        self.__names['''self.p_item[2] = {0..4}  # Using indices to refer to items by position '''] = ('''self.p_item[2] = {0..4}  # Using indices to refer to items by position ''',self.guard14,self.act14)
+        self.__actionClass['''self.p_item[2] = {0..4}  # Using indices to refer to items by position '''] = '''<item> := {0..4}  # Using indices to refer to items by position '''
+        self.__orderings['''self.p_item[2] = {0..4}  # Using indices to refer to items by position '''] = 15
+        self.__okExcepts['''self.p_item[2] = {0..4}  # Using indices to refer to items by position '''] = ''''''
+        
+        self.__actions.append(('''%action% ''',self.guard15,self.act15))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard15,self.act15)
         self.__actionClass['''%action% '''] = '''<action> '''
-        self.__orderings['''%action% '''] = 2
+        self.__orderings['''%action% '''] = 16
         self.__okExcepts['''%action% '''] = ''''''
         
-        self.__actions.append(('''prob: 0.25 ''',self.guard2,self.act2))
-        self.__names['''prob: 0.25 '''] = ('''prob: 0.25 ''',self.guard2,self.act2)
-        self.__actionClass['''prob: 0.25 '''] = '''prob: 0.25 '''
-        self.__orderings['''prob: 0.25 '''] = 3
-        self.__okExcepts['''prob: 0.25 '''] = ''''''
+        self.__actions.append(('''add_category(self.p_category[0]) ''',self.guard16,self.act16))
+        self.__names['''add_category(self.p_category[0]) '''] = ('''add_category(self.p_category[0]) ''',self.guard16,self.act16)
+        self.__actionClass['''add_category(self.p_category[0]) '''] = '''add_category(<category>) '''
+        self.__orderings['''add_category(self.p_category[0]) '''] = 17
+        self.__okExcepts['''add_category(self.p_category[0]) '''] = ''''''
         
-        self.__actions.append(('''database.add_item("item", 10.0, 100) ''',self.guard3,self.act3))
-        self.__names['''database.add_item("item", 10.0, 100) '''] = ('''database.add_item("item", 10.0, 100) ''',self.guard3,self.act3)
-        self.__actionClass['''database.add_item("item", 10.0, 100) '''] = '''database.add_item("item", 10.0, 100) '''
-        self.__orderings['''database.add_item("item", 10.0, 100) '''] = 4
-        self.__okExcepts['''database.add_item("item", 10.0, 100) '''] = ''''''
+        self.__actions.append(('''add_category(self.p_category[1]) ''',self.guard17,self.act17))
+        self.__names['''add_category(self.p_category[1]) '''] = ('''add_category(self.p_category[1]) ''',self.guard17,self.act17)
+        self.__actionClass['''add_category(self.p_category[1]) '''] = '''add_category(<category>) '''
+        self.__orderings['''add_category(self.p_category[1]) '''] = 18
+        self.__okExcepts['''add_category(self.p_category[1]) '''] = ''''''
         
-        self.__actions.append(('''%action% ''',self.guard4,self.act4))
-        self.__names['''%action% '''] = ('''%action% ''',self.guard4,self.act4)
+        self.__actions.append(('''%action% ''',self.guard18,self.act18))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard18,self.act18)
         self.__actionClass['''%action% '''] = '''<action> '''
-        self.__orderings['''%action% '''] = 5
+        self.__orderings['''%action% '''] = 19
         self.__okExcepts['''%action% '''] = ''''''
         
-        self.__actions.append(('''prob: 0.25 ''',self.guard5,self.act5))
-        self.__names['''prob: 0.25 '''] = ('''prob: 0.25 ''',self.guard5,self.act5)
-        self.__actionClass['''prob: 0.25 '''] = '''prob: 0.25 '''
-        self.__orderings['''prob: 0.25 '''] = 6
-        self.__okExcepts['''prob: 0.25 '''] = ''''''
+        self.__actions.append(('''choice = {0..4} ''',self.guard19,self.act19))
+        self.__names['''choice = {0..4} '''] = ('''choice = {0..4} ''',self.guard19,self.act19)
+        self.__actionClass['''choice = {0..4} '''] = '''choice := {0..4} '''
+        self.__orderings['''choice = {0..4} '''] = 20
+        self.__okExcepts['''choice = {0..4} '''] = ''''''
         
-        self.__actions.append(('''database.delete_item("item") ''',self.guard6,self.act6))
-        self.__names['''database.delete_item("item") '''] = ('''database.delete_item("item") ''',self.guard6,self.act6)
-        self.__actionClass['''database.delete_item("item") '''] = '''database.delete_item("item") '''
-        self.__orderings['''database.delete_item("item") '''] = 7
-        self.__okExcepts['''database.delete_item("item") '''] = ''''''
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard20,self.act20))
+        self.__names['''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard20,self.act20)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 21
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
         
-        self.__actions.append(('''%action% ''',self.guard7,self.act7))
-        self.__names['''%action% '''] = ('''%action% ''',self.guard7,self.act7)
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard21,self.act21))
+        self.__names['''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard21,self.act21)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 22
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard22,self.act22))
+        self.__names['''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard22,self.act22)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 23
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard23,self.act23))
+        self.__names['''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard23,self.act23)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 24
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard24,self.act24))
+        self.__names['''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard24,self.act24)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 25
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard25,self.act25))
+        self.__names['''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard25,self.act25)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 26
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard26,self.act26))
+        self.__names['''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard26,self.act26)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 27
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard27,self.act27))
+        self.__names['''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard27,self.act27)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 28
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard28,self.act28))
+        self.__names['''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard28,self.act28)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 29
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard29,self.act29))
+        self.__names['''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard29,self.act29)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 30
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard30,self.act30))
+        self.__names['''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard30,self.act30)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 31
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard31,self.act31))
+        self.__names['''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard31,self.act31)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 32
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard32,self.act32))
+        self.__names['''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard32,self.act32)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 33
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard33,self.act33))
+        self.__names['''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard33,self.act33)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 34
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard34,self.act34))
+        self.__names['''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard34,self.act34)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 35
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard35,self.act35))
+        self.__names['''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard35,self.act35)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 36
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard36,self.act36))
+        self.__names['''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard36,self.act36)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 37
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard37,self.act37))
+        self.__names['''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard37,self.act37)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 38
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard38,self.act38))
+        self.__names['''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard38,self.act38)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 39
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard39,self.act39))
+        self.__names['''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard39,self.act39)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 40
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard40,self.act40))
+        self.__names['''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard40,self.act40)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 41
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard41,self.act41))
+        self.__names['''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard41,self.act41)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 42
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard42,self.act42))
+        self.__names['''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard42,self.act42)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 43
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard43,self.act43))
+        self.__names['''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard43,self.act43)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 44
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard44,self.act44))
+        self.__names['''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard44,self.act44)
+        self.__actionClass['''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 45
+        self.__okExcepts['''add_item(self.p_str[0], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard45,self.act45))
+        self.__names['''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard45,self.act45)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 46
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard46,self.act46))
+        self.__names['''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard46,self.act46)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 47
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard47,self.act47))
+        self.__names['''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard47,self.act47)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 48
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard48,self.act48))
+        self.__names['''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard48,self.act48)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 49
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard49,self.act49))
+        self.__names['''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard49,self.act49)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 50
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard50,self.act50))
+        self.__names['''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard50,self.act50)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 51
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard51,self.act51))
+        self.__names['''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard51,self.act51)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 52
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard52,self.act52))
+        self.__names['''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard52,self.act52)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 53
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard53,self.act53))
+        self.__names['''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard53,self.act53)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 54
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard54,self.act54))
+        self.__names['''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard54,self.act54)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 55
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard55,self.act55))
+        self.__names['''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard55,self.act55)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 56
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard56,self.act56))
+        self.__names['''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard56,self.act56)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 57
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard57,self.act57))
+        self.__names['''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard57,self.act57)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 58
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard58,self.act58))
+        self.__names['''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard58,self.act58)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 59
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard59,self.act59))
+        self.__names['''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard59,self.act59)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 60
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard60,self.act60))
+        self.__names['''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard60,self.act60)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 61
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard61,self.act61))
+        self.__names['''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard61,self.act61)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 62
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard62,self.act62))
+        self.__names['''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard62,self.act62)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 63
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard63,self.act63))
+        self.__names['''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard63,self.act63)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 64
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard64,self.act64))
+        self.__names['''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard64,self.act64)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 65
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard65,self.act65))
+        self.__names['''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard65,self.act65)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 66
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard66,self.act66))
+        self.__names['''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard66,self.act66)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 67
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard67,self.act67))
+        self.__names['''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard67,self.act67)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 68
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard68,self.act68))
+        self.__names['''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard68,self.act68)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 69
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard69,self.act69))
+        self.__names['''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard69,self.act69)
+        self.__actionClass['''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 70
+        self.__okExcepts['''add_item(self.p_str[1], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard70,self.act70))
+        self.__names['''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard70,self.act70)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 71
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard71,self.act71))
+        self.__names['''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard71,self.act71)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 72
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard72,self.act72))
+        self.__names['''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard72,self.act72)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 73
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard73,self.act73))
+        self.__names['''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard73,self.act73)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 74
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard74,self.act74))
+        self.__names['''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard74,self.act74)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 75
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard75,self.act75))
+        self.__names['''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard75,self.act75)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 76
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard76,self.act76))
+        self.__names['''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard76,self.act76)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 77
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard77,self.act77))
+        self.__names['''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard77,self.act77)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 78
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard78,self.act78))
+        self.__names['''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard78,self.act78)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 79
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard79,self.act79))
+        self.__names['''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard79,self.act79)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 80
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard80,self.act80))
+        self.__names['''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard80,self.act80)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 81
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard81,self.act81))
+        self.__names['''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard81,self.act81)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 82
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard82,self.act82))
+        self.__names['''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard82,self.act82)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 83
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard83,self.act83))
+        self.__names['''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard83,self.act83)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 84
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard84,self.act84))
+        self.__names['''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard84,self.act84)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 85
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard85,self.act85))
+        self.__names['''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard85,self.act85)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 86
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard86,self.act86))
+        self.__names['''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard86,self.act86)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 87
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard87,self.act87))
+        self.__names['''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard87,self.act87)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 88
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard88,self.act88))
+        self.__names['''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard88,self.act88)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 89
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard89,self.act89))
+        self.__names['''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard89,self.act89)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 90
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard90,self.act90))
+        self.__names['''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard90,self.act90)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 91
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard91,self.act91))
+        self.__names['''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard91,self.act91)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 92
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard92,self.act92))
+        self.__names['''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard92,self.act92)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 93
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard93,self.act93))
+        self.__names['''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard93,self.act93)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 94
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard94,self.act94))
+        self.__names['''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard94,self.act94)
+        self.__actionClass['''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 95
+        self.__okExcepts['''add_item(self.p_str[2], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard95,self.act95))
+        self.__names['''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard95,self.act95)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 96
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard96,self.act96))
+        self.__names['''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard96,self.act96)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 97
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard97,self.act97))
+        self.__names['''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard97,self.act97)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 98
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard98,self.act98))
+        self.__names['''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard98,self.act98)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 99
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard99,self.act99))
+        self.__names['''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard99,self.act99)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 100
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard100,self.act100))
+        self.__names['''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard100,self.act100)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 101
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard101,self.act101))
+        self.__names['''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard101,self.act101)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 102
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard102,self.act102))
+        self.__names['''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard102,self.act102)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 103
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard103,self.act103))
+        self.__names['''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard103,self.act103)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 104
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard104,self.act104))
+        self.__names['''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard104,self.act104)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 105
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard105,self.act105))
+        self.__names['''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard105,self.act105)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 106
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard106,self.act106))
+        self.__names['''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard106,self.act106)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 107
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard107,self.act107))
+        self.__names['''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard107,self.act107)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 108
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard108,self.act108))
+        self.__names['''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard108,self.act108)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 109
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard109,self.act109))
+        self.__names['''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard109,self.act109)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 110
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard110,self.act110))
+        self.__names['''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard110,self.act110)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 111
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard111,self.act111))
+        self.__names['''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard111,self.act111)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 112
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard112,self.act112))
+        self.__names['''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard112,self.act112)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 113
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard113,self.act113))
+        self.__names['''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard113,self.act113)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 114
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard114,self.act114))
+        self.__names['''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard114,self.act114)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 115
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard115,self.act115))
+        self.__names['''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard115,self.act115)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 116
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard116,self.act116))
+        self.__names['''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard116,self.act116)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 117
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard117,self.act117))
+        self.__names['''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard117,self.act117)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 118
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard118,self.act118))
+        self.__names['''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard118,self.act118)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 119
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard119,self.act119))
+        self.__names['''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard119,self.act119)
+        self.__actionClass['''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 120
+        self.__okExcepts['''add_item(self.p_str[3], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard120,self.act120))
+        self.__names['''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard120,self.act120)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 121
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[0], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard121,self.act121))
+        self.__names['''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard121,self.act121)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 122
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[0], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard122,self.act122))
+        self.__names['''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard122,self.act122)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 123
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[0], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard123,self.act123))
+        self.__names['''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard123,self.act123)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 124
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[0], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard124,self.act124))
+        self.__names['''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard124,self.act124)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 125
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[0], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard125,self.act125))
+        self.__names['''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard125,self.act125)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 126
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[1], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard126,self.act126))
+        self.__names['''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard126,self.act126)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 127
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[1], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard127,self.act127))
+        self.__names['''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard127,self.act127)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 128
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[1], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard128,self.act128))
+        self.__names['''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard128,self.act128)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 129
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[1], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard129,self.act129))
+        self.__names['''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard129,self.act129)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 130
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[1], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard130,self.act130))
+        self.__names['''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard130,self.act130)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 131
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[2], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard131,self.act131))
+        self.__names['''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard131,self.act131)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 132
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[2], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard132,self.act132))
+        self.__names['''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard132,self.act132)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 133
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[2], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard133,self.act133))
+        self.__names['''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard133,self.act133)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 134
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[2], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard134,self.act134))
+        self.__names['''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard134,self.act134)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 135
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[2], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard135,self.act135))
+        self.__names['''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard135,self.act135)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 136
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[3], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard136,self.act136))
+        self.__names['''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard136,self.act136)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 137
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[3], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard137,self.act137))
+        self.__names['''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard137,self.act137)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 138
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[3], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard138,self.act138))
+        self.__names['''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard138,self.act138)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 139
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[3], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard139,self.act139))
+        self.__names['''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard139,self.act139)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 140
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[3], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard140,self.act140))
+        self.__names['''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity ''',self.guard140,self.act140)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = 141
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[4], self.p_int[0], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard141,self.act141))
+        self.__names['''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity ''',self.guard141,self.act141)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = 142
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[4], self.p_int[1], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard142,self.act142))
+        self.__names['''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity ''',self.guard142,self.act142)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = 143
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[4], self.p_int[2], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard143,self.act143))
+        self.__names['''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity ''',self.guard143,self.act143)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = 144
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[4], self.p_int[3], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard144,self.act144))
+        self.__names['''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ('''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity ''',self.guard144,self.act144)
+        self.__actionClass['''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = '''add_item(<str>, <int>, <int>, 1)  # Using default category ID for simplicity '''
+        self.__orderings['''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = 145
+        self.__okExcepts['''add_item(self.p_str[4], self.p_int[4], self.p_int[4], 1)  # Using default category ID for simplicity '''] = ''''''
+        
+        self.__actions.append(('''%action% ''',self.guard145,self.act145))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard145,self.act145)
         self.__actionClass['''%action% '''] = '''<action> '''
-        self.__orderings['''%action% '''] = 8
+        self.__orderings['''%action% '''] = 146
         self.__okExcepts['''%action% '''] = ''''''
         
-        self.__actions.append(('''prob: 0.25 ''',self.guard8,self.act8))
-        self.__names['''prob: 0.25 '''] = ('''prob: 0.25 ''',self.guard8,self.act8)
-        self.__actionClass['''prob: 0.25 '''] = '''prob: 0.25 '''
-        self.__orderings['''prob: 0.25 '''] = 9
-        self.__okExcepts['''prob: 0.25 '''] = ''''''
+        self.__actions.append(('''choice = {0..4} ''',self.guard146,self.act146))
+        self.__names['''choice = {0..4} '''] = ('''choice = {0..4} ''',self.guard146,self.act146)
+        self.__actionClass['''choice = {0..4} '''] = '''choice := {0..4} '''
+        self.__orderings['''choice = {0..4} '''] = 147
+        self.__okExcepts['''choice = {0..4} '''] = ''''''
         
-        self.__actions.append(('''database.update_item("item", quantity=50) ''',self.guard9,self.act9))
-        self.__names['''database.update_item("item", quantity=50) '''] = ('''database.update_item("item", quantity=50) ''',self.guard9,self.act9)
-        self.__actionClass['''database.update_item("item", quantity=50) '''] = '''database.update_item("item", quantity=50) '''
-        self.__orderings['''database.update_item("item", quantity=50) '''] = 10
-        self.__okExcepts['''database.update_item("item", quantity=50) '''] = ''''''
+        self.__actions.append(('''update_item(self.p_str[0], quantity=self.p_int[0]) ''',self.guard147,self.act147))
+        self.__names['''update_item(self.p_str[0], quantity=self.p_int[0]) '''] = ('''update_item(self.p_str[0], quantity=self.p_int[0]) ''',self.guard147,self.act147)
+        self.__actionClass['''update_item(self.p_str[0], quantity=self.p_int[0]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], quantity=self.p_int[0]) '''] = 148
+        self.__okExcepts['''update_item(self.p_str[0], quantity=self.p_int[0]) '''] = ''''''
         
-        self.__actions.append(('''%action% ''',self.guard10,self.act10))
-        self.__names['''%action% '''] = ('''%action% ''',self.guard10,self.act10)
+        self.__actions.append(('''update_item(self.p_str[0], quantity=self.p_int[1]) ''',self.guard148,self.act148))
+        self.__names['''update_item(self.p_str[0], quantity=self.p_int[1]) '''] = ('''update_item(self.p_str[0], quantity=self.p_int[1]) ''',self.guard148,self.act148)
+        self.__actionClass['''update_item(self.p_str[0], quantity=self.p_int[1]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], quantity=self.p_int[1]) '''] = 149
+        self.__okExcepts['''update_item(self.p_str[0], quantity=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[0], quantity=self.p_int[2]) ''',self.guard149,self.act149))
+        self.__names['''update_item(self.p_str[0], quantity=self.p_int[2]) '''] = ('''update_item(self.p_str[0], quantity=self.p_int[2]) ''',self.guard149,self.act149)
+        self.__actionClass['''update_item(self.p_str[0], quantity=self.p_int[2]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], quantity=self.p_int[2]) '''] = 150
+        self.__okExcepts['''update_item(self.p_str[0], quantity=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[0], quantity=self.p_int[3]) ''',self.guard150,self.act150))
+        self.__names['''update_item(self.p_str[0], quantity=self.p_int[3]) '''] = ('''update_item(self.p_str[0], quantity=self.p_int[3]) ''',self.guard150,self.act150)
+        self.__actionClass['''update_item(self.p_str[0], quantity=self.p_int[3]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], quantity=self.p_int[3]) '''] = 151
+        self.__okExcepts['''update_item(self.p_str[0], quantity=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[0], quantity=self.p_int[4]) ''',self.guard151,self.act151))
+        self.__names['''update_item(self.p_str[0], quantity=self.p_int[4]) '''] = ('''update_item(self.p_str[0], quantity=self.p_int[4]) ''',self.guard151,self.act151)
+        self.__actionClass['''update_item(self.p_str[0], quantity=self.p_int[4]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], quantity=self.p_int[4]) '''] = 152
+        self.__okExcepts['''update_item(self.p_str[0], quantity=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], quantity=self.p_int[0]) ''',self.guard152,self.act152))
+        self.__names['''update_item(self.p_str[1], quantity=self.p_int[0]) '''] = ('''update_item(self.p_str[1], quantity=self.p_int[0]) ''',self.guard152,self.act152)
+        self.__actionClass['''update_item(self.p_str[1], quantity=self.p_int[0]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], quantity=self.p_int[0]) '''] = 153
+        self.__okExcepts['''update_item(self.p_str[1], quantity=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], quantity=self.p_int[1]) ''',self.guard153,self.act153))
+        self.__names['''update_item(self.p_str[1], quantity=self.p_int[1]) '''] = ('''update_item(self.p_str[1], quantity=self.p_int[1]) ''',self.guard153,self.act153)
+        self.__actionClass['''update_item(self.p_str[1], quantity=self.p_int[1]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], quantity=self.p_int[1]) '''] = 154
+        self.__okExcepts['''update_item(self.p_str[1], quantity=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], quantity=self.p_int[2]) ''',self.guard154,self.act154))
+        self.__names['''update_item(self.p_str[1], quantity=self.p_int[2]) '''] = ('''update_item(self.p_str[1], quantity=self.p_int[2]) ''',self.guard154,self.act154)
+        self.__actionClass['''update_item(self.p_str[1], quantity=self.p_int[2]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], quantity=self.p_int[2]) '''] = 155
+        self.__okExcepts['''update_item(self.p_str[1], quantity=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], quantity=self.p_int[3]) ''',self.guard155,self.act155))
+        self.__names['''update_item(self.p_str[1], quantity=self.p_int[3]) '''] = ('''update_item(self.p_str[1], quantity=self.p_int[3]) ''',self.guard155,self.act155)
+        self.__actionClass['''update_item(self.p_str[1], quantity=self.p_int[3]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], quantity=self.p_int[3]) '''] = 156
+        self.__okExcepts['''update_item(self.p_str[1], quantity=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], quantity=self.p_int[4]) ''',self.guard156,self.act156))
+        self.__names['''update_item(self.p_str[1], quantity=self.p_int[4]) '''] = ('''update_item(self.p_str[1], quantity=self.p_int[4]) ''',self.guard156,self.act156)
+        self.__actionClass['''update_item(self.p_str[1], quantity=self.p_int[4]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], quantity=self.p_int[4]) '''] = 157
+        self.__okExcepts['''update_item(self.p_str[1], quantity=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], quantity=self.p_int[0]) ''',self.guard157,self.act157))
+        self.__names['''update_item(self.p_str[2], quantity=self.p_int[0]) '''] = ('''update_item(self.p_str[2], quantity=self.p_int[0]) ''',self.guard157,self.act157)
+        self.__actionClass['''update_item(self.p_str[2], quantity=self.p_int[0]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], quantity=self.p_int[0]) '''] = 158
+        self.__okExcepts['''update_item(self.p_str[2], quantity=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], quantity=self.p_int[1]) ''',self.guard158,self.act158))
+        self.__names['''update_item(self.p_str[2], quantity=self.p_int[1]) '''] = ('''update_item(self.p_str[2], quantity=self.p_int[1]) ''',self.guard158,self.act158)
+        self.__actionClass['''update_item(self.p_str[2], quantity=self.p_int[1]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], quantity=self.p_int[1]) '''] = 159
+        self.__okExcepts['''update_item(self.p_str[2], quantity=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], quantity=self.p_int[2]) ''',self.guard159,self.act159))
+        self.__names['''update_item(self.p_str[2], quantity=self.p_int[2]) '''] = ('''update_item(self.p_str[2], quantity=self.p_int[2]) ''',self.guard159,self.act159)
+        self.__actionClass['''update_item(self.p_str[2], quantity=self.p_int[2]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], quantity=self.p_int[2]) '''] = 160
+        self.__okExcepts['''update_item(self.p_str[2], quantity=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], quantity=self.p_int[3]) ''',self.guard160,self.act160))
+        self.__names['''update_item(self.p_str[2], quantity=self.p_int[3]) '''] = ('''update_item(self.p_str[2], quantity=self.p_int[3]) ''',self.guard160,self.act160)
+        self.__actionClass['''update_item(self.p_str[2], quantity=self.p_int[3]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], quantity=self.p_int[3]) '''] = 161
+        self.__okExcepts['''update_item(self.p_str[2], quantity=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], quantity=self.p_int[4]) ''',self.guard161,self.act161))
+        self.__names['''update_item(self.p_str[2], quantity=self.p_int[4]) '''] = ('''update_item(self.p_str[2], quantity=self.p_int[4]) ''',self.guard161,self.act161)
+        self.__actionClass['''update_item(self.p_str[2], quantity=self.p_int[4]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], quantity=self.p_int[4]) '''] = 162
+        self.__okExcepts['''update_item(self.p_str[2], quantity=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], quantity=self.p_int[0]) ''',self.guard162,self.act162))
+        self.__names['''update_item(self.p_str[3], quantity=self.p_int[0]) '''] = ('''update_item(self.p_str[3], quantity=self.p_int[0]) ''',self.guard162,self.act162)
+        self.__actionClass['''update_item(self.p_str[3], quantity=self.p_int[0]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], quantity=self.p_int[0]) '''] = 163
+        self.__okExcepts['''update_item(self.p_str[3], quantity=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], quantity=self.p_int[1]) ''',self.guard163,self.act163))
+        self.__names['''update_item(self.p_str[3], quantity=self.p_int[1]) '''] = ('''update_item(self.p_str[3], quantity=self.p_int[1]) ''',self.guard163,self.act163)
+        self.__actionClass['''update_item(self.p_str[3], quantity=self.p_int[1]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], quantity=self.p_int[1]) '''] = 164
+        self.__okExcepts['''update_item(self.p_str[3], quantity=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], quantity=self.p_int[2]) ''',self.guard164,self.act164))
+        self.__names['''update_item(self.p_str[3], quantity=self.p_int[2]) '''] = ('''update_item(self.p_str[3], quantity=self.p_int[2]) ''',self.guard164,self.act164)
+        self.__actionClass['''update_item(self.p_str[3], quantity=self.p_int[2]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], quantity=self.p_int[2]) '''] = 165
+        self.__okExcepts['''update_item(self.p_str[3], quantity=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], quantity=self.p_int[3]) ''',self.guard165,self.act165))
+        self.__names['''update_item(self.p_str[3], quantity=self.p_int[3]) '''] = ('''update_item(self.p_str[3], quantity=self.p_int[3]) ''',self.guard165,self.act165)
+        self.__actionClass['''update_item(self.p_str[3], quantity=self.p_int[3]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], quantity=self.p_int[3]) '''] = 166
+        self.__okExcepts['''update_item(self.p_str[3], quantity=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], quantity=self.p_int[4]) ''',self.guard166,self.act166))
+        self.__names['''update_item(self.p_str[3], quantity=self.p_int[4]) '''] = ('''update_item(self.p_str[3], quantity=self.p_int[4]) ''',self.guard166,self.act166)
+        self.__actionClass['''update_item(self.p_str[3], quantity=self.p_int[4]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], quantity=self.p_int[4]) '''] = 167
+        self.__okExcepts['''update_item(self.p_str[3], quantity=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], quantity=self.p_int[0]) ''',self.guard167,self.act167))
+        self.__names['''update_item(self.p_str[4], quantity=self.p_int[0]) '''] = ('''update_item(self.p_str[4], quantity=self.p_int[0]) ''',self.guard167,self.act167)
+        self.__actionClass['''update_item(self.p_str[4], quantity=self.p_int[0]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], quantity=self.p_int[0]) '''] = 168
+        self.__okExcepts['''update_item(self.p_str[4], quantity=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], quantity=self.p_int[1]) ''',self.guard168,self.act168))
+        self.__names['''update_item(self.p_str[4], quantity=self.p_int[1]) '''] = ('''update_item(self.p_str[4], quantity=self.p_int[1]) ''',self.guard168,self.act168)
+        self.__actionClass['''update_item(self.p_str[4], quantity=self.p_int[1]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], quantity=self.p_int[1]) '''] = 169
+        self.__okExcepts['''update_item(self.p_str[4], quantity=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], quantity=self.p_int[2]) ''',self.guard169,self.act169))
+        self.__names['''update_item(self.p_str[4], quantity=self.p_int[2]) '''] = ('''update_item(self.p_str[4], quantity=self.p_int[2]) ''',self.guard169,self.act169)
+        self.__actionClass['''update_item(self.p_str[4], quantity=self.p_int[2]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], quantity=self.p_int[2]) '''] = 170
+        self.__okExcepts['''update_item(self.p_str[4], quantity=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], quantity=self.p_int[3]) ''',self.guard170,self.act170))
+        self.__names['''update_item(self.p_str[4], quantity=self.p_int[3]) '''] = ('''update_item(self.p_str[4], quantity=self.p_int[3]) ''',self.guard170,self.act170)
+        self.__actionClass['''update_item(self.p_str[4], quantity=self.p_int[3]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], quantity=self.p_int[3]) '''] = 171
+        self.__okExcepts['''update_item(self.p_str[4], quantity=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], quantity=self.p_int[4]) ''',self.guard171,self.act171))
+        self.__names['''update_item(self.p_str[4], quantity=self.p_int[4]) '''] = ('''update_item(self.p_str[4], quantity=self.p_int[4]) ''',self.guard171,self.act171)
+        self.__actionClass['''update_item(self.p_str[4], quantity=self.p_int[4]) '''] = '''update_item(<str>, quantity=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], quantity=self.p_int[4]) '''] = 172
+        self.__okExcepts['''update_item(self.p_str[4], quantity=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''%action% ''',self.guard172,self.act172))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard172,self.act172)
         self.__actionClass['''%action% '''] = '''<action> '''
-        self.__orderings['''%action% '''] = 11
+        self.__orderings['''%action% '''] = 173
         self.__okExcepts['''%action% '''] = ''''''
         
-        self.__actions.append(('''prob: 0.25 ''',self.guard11,self.act11))
-        self.__names['''prob: 0.25 '''] = ('''prob: 0.25 ''',self.guard11,self.act11)
-        self.__actionClass['''prob: 0.25 '''] = '''prob: 0.25 '''
-        self.__orderings['''prob: 0.25 '''] = 12
-        self.__okExcepts['''prob: 0.25 '''] = ''''''
+        self.__actions.append(('''choice = {0..4} ''',self.guard173,self.act173))
+        self.__names['''choice = {0..4} '''] = ('''choice = {0..4} ''',self.guard173,self.act173)
+        self.__actionClass['''choice = {0..4} '''] = '''choice := {0..4} '''
+        self.__orderings['''choice = {0..4} '''] = 174
+        self.__okExcepts['''choice = {0..4} '''] = ''''''
         
-        self.__actions.append(('''database.get_item("item") ''',self.guard12,self.act12))
-        self.__names['''database.get_item("item") '''] = ('''database.get_item("item") ''',self.guard12,self.act12)
-        self.__actionClass['''database.get_item("item") '''] = '''database.get_item("item") '''
-        self.__orderings['''database.get_item("item") '''] = 13
-        self.__okExcepts['''database.get_item("item") '''] = ''''''
+        self.__actions.append(('''update_item(self.p_str[0], price=self.p_int[0]) ''',self.guard174,self.act174))
+        self.__names['''update_item(self.p_str[0], price=self.p_int[0]) '''] = ('''update_item(self.p_str[0], price=self.p_int[0]) ''',self.guard174,self.act174)
+        self.__actionClass['''update_item(self.p_str[0], price=self.p_int[0]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], price=self.p_int[0]) '''] = 175
+        self.__okExcepts['''update_item(self.p_str[0], price=self.p_int[0]) '''] = ''''''
         
-        self.__actions.append(('''database.get_items() is not None ''',self.guard13,self.act13))
-        self.__names['''database.get_items() is not None '''] = ('''database.get_items() is not None ''',self.guard13,self.act13)
-        self.__actionClass['''database.get_items() is not None '''] = '''    database.get_items() is not None '''
-        self.__orderings['''database.get_items() is not None '''] = 14
-        self.__okExcepts['''database.get_items() is not None '''] = ''''''
+        self.__actions.append(('''update_item(self.p_str[0], price=self.p_int[1]) ''',self.guard175,self.act175))
+        self.__names['''update_item(self.p_str[0], price=self.p_int[1]) '''] = ('''update_item(self.p_str[0], price=self.p_int[1]) ''',self.guard175,self.act175)
+        self.__actionClass['''update_item(self.p_str[0], price=self.p_int[1]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], price=self.p_int[1]) '''] = 176
+        self.__okExcepts['''update_item(self.p_str[0], price=self.p_int[1]) '''] = ''''''
         
-        self.__actions.append(('''cleanup: ''',self.guard14,self.act14))
-        self.__names['''cleanup: '''] = ('''cleanup: ''',self.guard14,self.act14)
-        self.__actionClass['''cleanup: '''] = '''cleanup: '''
-        self.__orderings['''cleanup: '''] = 15
-        self.__okExcepts['''cleanup: '''] = ''''''
+        self.__actions.append(('''update_item(self.p_str[0], price=self.p_int[2]) ''',self.guard176,self.act176))
+        self.__names['''update_item(self.p_str[0], price=self.p_int[2]) '''] = ('''update_item(self.p_str[0], price=self.p_int[2]) ''',self.guard176,self.act176)
+        self.__actionClass['''update_item(self.p_str[0], price=self.p_int[2]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], price=self.p_int[2]) '''] = 177
+        self.__okExcepts['''update_item(self.p_str[0], price=self.p_int[2]) '''] = ''''''
         
-        self.__actions.append(('''database.clear_db()  # Assuming you have a method to clear the database ''',self.guard15,self.act15))
-        self.__names['''database.clear_db()  # Assuming you have a method to clear the database '''] = ('''database.clear_db()  # Assuming you have a method to clear the database ''',self.guard15,self.act15)
-        self.__actionClass['''database.clear_db()  # Assuming you have a method to clear the database '''] = '''    database.clear_db()  # Assuming you have a method to clear the database '''
-        self.__orderings['''database.clear_db()  # Assuming you have a method to clear the database '''] = 16
-        self.__okExcepts['''database.clear_db()  # Assuming you have a method to clear the database '''] = ''''''
+        self.__actions.append(('''update_item(self.p_str[0], price=self.p_int[3]) ''',self.guard177,self.act177))
+        self.__names['''update_item(self.p_str[0], price=self.p_int[3]) '''] = ('''update_item(self.p_str[0], price=self.p_int[3]) ''',self.guard177,self.act177)
+        self.__actionClass['''update_item(self.p_str[0], price=self.p_int[3]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], price=self.p_int[3]) '''] = 178
+        self.__okExcepts['''update_item(self.p_str[0], price=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[0], price=self.p_int[4]) ''',self.guard178,self.act178))
+        self.__names['''update_item(self.p_str[0], price=self.p_int[4]) '''] = ('''update_item(self.p_str[0], price=self.p_int[4]) ''',self.guard178,self.act178)
+        self.__actionClass['''update_item(self.p_str[0], price=self.p_int[4]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[0], price=self.p_int[4]) '''] = 179
+        self.__okExcepts['''update_item(self.p_str[0], price=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], price=self.p_int[0]) ''',self.guard179,self.act179))
+        self.__names['''update_item(self.p_str[1], price=self.p_int[0]) '''] = ('''update_item(self.p_str[1], price=self.p_int[0]) ''',self.guard179,self.act179)
+        self.__actionClass['''update_item(self.p_str[1], price=self.p_int[0]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], price=self.p_int[0]) '''] = 180
+        self.__okExcepts['''update_item(self.p_str[1], price=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], price=self.p_int[1]) ''',self.guard180,self.act180))
+        self.__names['''update_item(self.p_str[1], price=self.p_int[1]) '''] = ('''update_item(self.p_str[1], price=self.p_int[1]) ''',self.guard180,self.act180)
+        self.__actionClass['''update_item(self.p_str[1], price=self.p_int[1]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], price=self.p_int[1]) '''] = 181
+        self.__okExcepts['''update_item(self.p_str[1], price=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], price=self.p_int[2]) ''',self.guard181,self.act181))
+        self.__names['''update_item(self.p_str[1], price=self.p_int[2]) '''] = ('''update_item(self.p_str[1], price=self.p_int[2]) ''',self.guard181,self.act181)
+        self.__actionClass['''update_item(self.p_str[1], price=self.p_int[2]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], price=self.p_int[2]) '''] = 182
+        self.__okExcepts['''update_item(self.p_str[1], price=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], price=self.p_int[3]) ''',self.guard182,self.act182))
+        self.__names['''update_item(self.p_str[1], price=self.p_int[3]) '''] = ('''update_item(self.p_str[1], price=self.p_int[3]) ''',self.guard182,self.act182)
+        self.__actionClass['''update_item(self.p_str[1], price=self.p_int[3]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], price=self.p_int[3]) '''] = 183
+        self.__okExcepts['''update_item(self.p_str[1], price=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[1], price=self.p_int[4]) ''',self.guard183,self.act183))
+        self.__names['''update_item(self.p_str[1], price=self.p_int[4]) '''] = ('''update_item(self.p_str[1], price=self.p_int[4]) ''',self.guard183,self.act183)
+        self.__actionClass['''update_item(self.p_str[1], price=self.p_int[4]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[1], price=self.p_int[4]) '''] = 184
+        self.__okExcepts['''update_item(self.p_str[1], price=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], price=self.p_int[0]) ''',self.guard184,self.act184))
+        self.__names['''update_item(self.p_str[2], price=self.p_int[0]) '''] = ('''update_item(self.p_str[2], price=self.p_int[0]) ''',self.guard184,self.act184)
+        self.__actionClass['''update_item(self.p_str[2], price=self.p_int[0]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], price=self.p_int[0]) '''] = 185
+        self.__okExcepts['''update_item(self.p_str[2], price=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], price=self.p_int[1]) ''',self.guard185,self.act185))
+        self.__names['''update_item(self.p_str[2], price=self.p_int[1]) '''] = ('''update_item(self.p_str[2], price=self.p_int[1]) ''',self.guard185,self.act185)
+        self.__actionClass['''update_item(self.p_str[2], price=self.p_int[1]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], price=self.p_int[1]) '''] = 186
+        self.__okExcepts['''update_item(self.p_str[2], price=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], price=self.p_int[2]) ''',self.guard186,self.act186))
+        self.__names['''update_item(self.p_str[2], price=self.p_int[2]) '''] = ('''update_item(self.p_str[2], price=self.p_int[2]) ''',self.guard186,self.act186)
+        self.__actionClass['''update_item(self.p_str[2], price=self.p_int[2]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], price=self.p_int[2]) '''] = 187
+        self.__okExcepts['''update_item(self.p_str[2], price=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], price=self.p_int[3]) ''',self.guard187,self.act187))
+        self.__names['''update_item(self.p_str[2], price=self.p_int[3]) '''] = ('''update_item(self.p_str[2], price=self.p_int[3]) ''',self.guard187,self.act187)
+        self.__actionClass['''update_item(self.p_str[2], price=self.p_int[3]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], price=self.p_int[3]) '''] = 188
+        self.__okExcepts['''update_item(self.p_str[2], price=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[2], price=self.p_int[4]) ''',self.guard188,self.act188))
+        self.__names['''update_item(self.p_str[2], price=self.p_int[4]) '''] = ('''update_item(self.p_str[2], price=self.p_int[4]) ''',self.guard188,self.act188)
+        self.__actionClass['''update_item(self.p_str[2], price=self.p_int[4]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[2], price=self.p_int[4]) '''] = 189
+        self.__okExcepts['''update_item(self.p_str[2], price=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], price=self.p_int[0]) ''',self.guard189,self.act189))
+        self.__names['''update_item(self.p_str[3], price=self.p_int[0]) '''] = ('''update_item(self.p_str[3], price=self.p_int[0]) ''',self.guard189,self.act189)
+        self.__actionClass['''update_item(self.p_str[3], price=self.p_int[0]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], price=self.p_int[0]) '''] = 190
+        self.__okExcepts['''update_item(self.p_str[3], price=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], price=self.p_int[1]) ''',self.guard190,self.act190))
+        self.__names['''update_item(self.p_str[3], price=self.p_int[1]) '''] = ('''update_item(self.p_str[3], price=self.p_int[1]) ''',self.guard190,self.act190)
+        self.__actionClass['''update_item(self.p_str[3], price=self.p_int[1]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], price=self.p_int[1]) '''] = 191
+        self.__okExcepts['''update_item(self.p_str[3], price=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], price=self.p_int[2]) ''',self.guard191,self.act191))
+        self.__names['''update_item(self.p_str[3], price=self.p_int[2]) '''] = ('''update_item(self.p_str[3], price=self.p_int[2]) ''',self.guard191,self.act191)
+        self.__actionClass['''update_item(self.p_str[3], price=self.p_int[2]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], price=self.p_int[2]) '''] = 192
+        self.__okExcepts['''update_item(self.p_str[3], price=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], price=self.p_int[3]) ''',self.guard192,self.act192))
+        self.__names['''update_item(self.p_str[3], price=self.p_int[3]) '''] = ('''update_item(self.p_str[3], price=self.p_int[3]) ''',self.guard192,self.act192)
+        self.__actionClass['''update_item(self.p_str[3], price=self.p_int[3]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], price=self.p_int[3]) '''] = 193
+        self.__okExcepts['''update_item(self.p_str[3], price=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[3], price=self.p_int[4]) ''',self.guard193,self.act193))
+        self.__names['''update_item(self.p_str[3], price=self.p_int[4]) '''] = ('''update_item(self.p_str[3], price=self.p_int[4]) ''',self.guard193,self.act193)
+        self.__actionClass['''update_item(self.p_str[3], price=self.p_int[4]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[3], price=self.p_int[4]) '''] = 194
+        self.__okExcepts['''update_item(self.p_str[3], price=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], price=self.p_int[0]) ''',self.guard194,self.act194))
+        self.__names['''update_item(self.p_str[4], price=self.p_int[0]) '''] = ('''update_item(self.p_str[4], price=self.p_int[0]) ''',self.guard194,self.act194)
+        self.__actionClass['''update_item(self.p_str[4], price=self.p_int[0]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], price=self.p_int[0]) '''] = 195
+        self.__okExcepts['''update_item(self.p_str[4], price=self.p_int[0]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], price=self.p_int[1]) ''',self.guard195,self.act195))
+        self.__names['''update_item(self.p_str[4], price=self.p_int[1]) '''] = ('''update_item(self.p_str[4], price=self.p_int[1]) ''',self.guard195,self.act195)
+        self.__actionClass['''update_item(self.p_str[4], price=self.p_int[1]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], price=self.p_int[1]) '''] = 196
+        self.__okExcepts['''update_item(self.p_str[4], price=self.p_int[1]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], price=self.p_int[2]) ''',self.guard196,self.act196))
+        self.__names['''update_item(self.p_str[4], price=self.p_int[2]) '''] = ('''update_item(self.p_str[4], price=self.p_int[2]) ''',self.guard196,self.act196)
+        self.__actionClass['''update_item(self.p_str[4], price=self.p_int[2]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], price=self.p_int[2]) '''] = 197
+        self.__okExcepts['''update_item(self.p_str[4], price=self.p_int[2]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], price=self.p_int[3]) ''',self.guard197,self.act197))
+        self.__names['''update_item(self.p_str[4], price=self.p_int[3]) '''] = ('''update_item(self.p_str[4], price=self.p_int[3]) ''',self.guard197,self.act197)
+        self.__actionClass['''update_item(self.p_str[4], price=self.p_int[3]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], price=self.p_int[3]) '''] = 198
+        self.__okExcepts['''update_item(self.p_str[4], price=self.p_int[3]) '''] = ''''''
+        
+        self.__actions.append(('''update_item(self.p_str[4], price=self.p_int[4]) ''',self.guard198,self.act198))
+        self.__names['''update_item(self.p_str[4], price=self.p_int[4]) '''] = ('''update_item(self.p_str[4], price=self.p_int[4]) ''',self.guard198,self.act198)
+        self.__actionClass['''update_item(self.p_str[4], price=self.p_int[4]) '''] = '''update_item(<str>, price=<int>) '''
+        self.__orderings['''update_item(self.p_str[4], price=self.p_int[4]) '''] = 199
+        self.__okExcepts['''update_item(self.p_str[4], price=self.p_int[4]) '''] = ''''''
+        
+        self.__actions.append(('''%action% ''',self.guard199,self.act199))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard199,self.act199)
+        self.__actionClass['''%action% '''] = '''<action> '''
+        self.__orderings['''%action% '''] = 200
+        self.__okExcepts['''%action% '''] = ''''''
+        
+        self.__actions.append(('''choice = {0..4} ''',self.guard200,self.act200))
+        self.__names['''choice = {0..4} '''] = ('''choice = {0..4} ''',self.guard200,self.act200)
+        self.__actionClass['''choice = {0..4} '''] = '''choice := {0..4} '''
+        self.__orderings['''choice = {0..4} '''] = 201
+        self.__okExcepts['''choice = {0..4} '''] = ''''''
+        
+        self.__actions.append(('''delete_item(self.p_str[0]) ''',self.guard201,self.act201))
+        self.__names['''delete_item(self.p_str[0]) '''] = ('''delete_item(self.p_str[0]) ''',self.guard201,self.act201)
+        self.__actionClass['''delete_item(self.p_str[0]) '''] = '''delete_item(<str>) '''
+        self.__orderings['''delete_item(self.p_str[0]) '''] = 202
+        self.__okExcepts['''delete_item(self.p_str[0]) '''] = ''''''
+        
+        self.__actions.append(('''delete_item(self.p_str[1]) ''',self.guard202,self.act202))
+        self.__names['''delete_item(self.p_str[1]) '''] = ('''delete_item(self.p_str[1]) ''',self.guard202,self.act202)
+        self.__actionClass['''delete_item(self.p_str[1]) '''] = '''delete_item(<str>) '''
+        self.__orderings['''delete_item(self.p_str[1]) '''] = 203
+        self.__okExcepts['''delete_item(self.p_str[1]) '''] = ''''''
+        
+        self.__actions.append(('''delete_item(self.p_str[2]) ''',self.guard203,self.act203))
+        self.__names['''delete_item(self.p_str[2]) '''] = ('''delete_item(self.p_str[2]) ''',self.guard203,self.act203)
+        self.__actionClass['''delete_item(self.p_str[2]) '''] = '''delete_item(<str>) '''
+        self.__orderings['''delete_item(self.p_str[2]) '''] = 204
+        self.__okExcepts['''delete_item(self.p_str[2]) '''] = ''''''
+        
+        self.__actions.append(('''delete_item(self.p_str[3]) ''',self.guard204,self.act204))
+        self.__names['''delete_item(self.p_str[3]) '''] = ('''delete_item(self.p_str[3]) ''',self.guard204,self.act204)
+        self.__actionClass['''delete_item(self.p_str[3]) '''] = '''delete_item(<str>) '''
+        self.__orderings['''delete_item(self.p_str[3]) '''] = 205
+        self.__okExcepts['''delete_item(self.p_str[3]) '''] = ''''''
+        
+        self.__actions.append(('''delete_item(self.p_str[4]) ''',self.guard205,self.act205))
+        self.__names['''delete_item(self.p_str[4]) '''] = ('''delete_item(self.p_str[4]) ''',self.guard205,self.act205)
+        self.__actionClass['''delete_item(self.p_str[4]) '''] = '''delete_item(<str>) '''
+        self.__orderings['''delete_item(self.p_str[4]) '''] = 206
+        self.__okExcepts['''delete_item(self.p_str[4]) '''] = ''''''
+        
+        self.__actions.append(('''%action% ''',self.guard206,self.act206))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard206,self.act206)
+        self.__actionClass['''%action% '''] = '''<action> '''
+        self.__orderings['''%action% '''] = 207
+        self.__okExcepts['''%action% '''] = ''''''
+        
+        self.__actions.append(('''item = get_item(self.p_str[0]) ''',self.guard207,self.act207))
+        self.__names['''item = get_item(self.p_str[0]) '''] = ('''item = get_item(self.p_str[0]) ''',self.guard207,self.act207)
+        self.__actionClass['''item = get_item(self.p_str[0]) '''] = '''item := get_item(<str>) '''
+        self.__orderings['''item = get_item(self.p_str[0]) '''] = 208
+        self.__okExcepts['''item = get_item(self.p_str[0]) '''] = ''''''
+        
+        self.__actions.append(('''item = get_item(self.p_str[1]) ''',self.guard208,self.act208))
+        self.__names['''item = get_item(self.p_str[1]) '''] = ('''item = get_item(self.p_str[1]) ''',self.guard208,self.act208)
+        self.__actionClass['''item = get_item(self.p_str[1]) '''] = '''item := get_item(<str>) '''
+        self.__orderings['''item = get_item(self.p_str[1]) '''] = 209
+        self.__okExcepts['''item = get_item(self.p_str[1]) '''] = ''''''
+        
+        self.__actions.append(('''item = get_item(self.p_str[2]) ''',self.guard209,self.act209))
+        self.__names['''item = get_item(self.p_str[2]) '''] = ('''item = get_item(self.p_str[2]) ''',self.guard209,self.act209)
+        self.__actionClass['''item = get_item(self.p_str[2]) '''] = '''item := get_item(<str>) '''
+        self.__orderings['''item = get_item(self.p_str[2]) '''] = 210
+        self.__okExcepts['''item = get_item(self.p_str[2]) '''] = ''''''
+        
+        self.__actions.append(('''item = get_item(self.p_str[3]) ''',self.guard210,self.act210))
+        self.__names['''item = get_item(self.p_str[3]) '''] = ('''item = get_item(self.p_str[3]) ''',self.guard210,self.act210)
+        self.__actionClass['''item = get_item(self.p_str[3]) '''] = '''item := get_item(<str>) '''
+        self.__orderings['''item = get_item(self.p_str[3]) '''] = 211
+        self.__okExcepts['''item = get_item(self.p_str[3]) '''] = ''''''
+        
+        self.__actions.append(('''item = get_item(self.p_str[4]) ''',self.guard211,self.act211))
+        self.__names['''item = get_item(self.p_str[4]) '''] = ('''item = get_item(self.p_str[4]) ''',self.guard211,self.act211)
+        self.__actionClass['''item = get_item(self.p_str[4]) '''] = '''item := get_item(<str>) '''
+        self.__orderings['''item = get_item(self.p_str[4]) '''] = 212
+        self.__okExcepts['''item = get_item(self.p_str[4]) '''] = ''''''
+        
+        self.__actions.append(('''%action% ''',self.guard212,self.act212))
+        self.__names['''%action% '''] = ('''%action% ''',self.guard212,self.act212)
+        self.__actionClass['''%action% '''] = '''<action> '''
+        self.__orderings['''%action% '''] = 213
+        self.__okExcepts['''%action% '''] = ''''''
+        
+        self.__actions.append(('''items = get_items() ''',self.guard213,self.act213))
+        self.__names['''items = get_items() '''] = ('''items = get_items() ''',self.guard213,self.act213)
+        self.__actionClass['''items = get_items() '''] = '''items := get_items() '''
+        self.__orderings['''items = get_items() '''] = 214
+        self.__okExcepts['''items = get_items() '''] = ''''''
         self.__actions_backup = list(self.__actions)
         self.__actions_assume_backup = list(self.__actions)
     def slowPoolStates(self):
         nonePools = []
         notUsedPools = []
+        if self.p_str[0] is None: nonePools.append('''self.p_str[0]''')
+        if not self.p_str_used[0]: notUsedPools.append('''self.p_str[0]''')
+        if self.p_str[1] is None: nonePools.append('''self.p_str[1]''')
+        if not self.p_str_used[1]: notUsedPools.append('''self.p_str[1]''')
+        if self.p_str[2] is None: nonePools.append('''self.p_str[2]''')
+        if not self.p_str_used[2]: notUsedPools.append('''self.p_str[2]''')
+        if self.p_str[3] is None: nonePools.append('''self.p_str[3]''')
+        if not self.p_str_used[3]: notUsedPools.append('''self.p_str[3]''')
+        if self.p_str[4] is None: nonePools.append('''self.p_str[4]''')
+        if not self.p_str_used[4]: notUsedPools.append('''self.p_str[4]''')
+        if self.p_int[0] is None: nonePools.append('''self.p_int[0]''')
+        if not self.p_int_used[0]: notUsedPools.append('''self.p_int[0]''')
+        if self.p_int[1] is None: nonePools.append('''self.p_int[1]''')
+        if not self.p_int_used[1]: notUsedPools.append('''self.p_int[1]''')
+        if self.p_int[2] is None: nonePools.append('''self.p_int[2]''')
+        if not self.p_int_used[2]: notUsedPools.append('''self.p_int[2]''')
+        if self.p_int[3] is None: nonePools.append('''self.p_int[3]''')
+        if not self.p_int_used[3]: notUsedPools.append('''self.p_int[3]''')
+        if self.p_int[4] is None: nonePools.append('''self.p_int[4]''')
+        if not self.p_int_used[4]: notUsedPools.append('''self.p_int[4]''')
         if self.p_item[0] is None: nonePools.append('''self.p_item[0]''')
         if not self.p_item_used[0]: notUsedPools.append('''self.p_item[0]''')
         if self.p_item[1] is None: nonePools.append('''self.p_item[1]''')
         if not self.p_item_used[1]: notUsedPools.append('''self.p_item[1]''')
         if self.p_item[2] is None: nonePools.append('''self.p_item[2]''')
         if not self.p_item_used[2]: notUsedPools.append('''self.p_item[2]''')
-        if self.p_item[3] is None: nonePools.append('''self.p_item[3]''')
-        if not self.p_item_used[3]: notUsedPools.append('''self.p_item[3]''')
-        if self.p_item[4] is None: nonePools.append('''self.p_item[4]''')
-        if not self.p_item_used[4]: notUsedPools.append('''self.p_item[4]''')
-        if self.p_item[5] is None: nonePools.append('''self.p_item[5]''')
-        if not self.p_item_used[5]: notUsedPools.append('''self.p_item[5]''')
-        if self.p_item[6] is None: nonePools.append('''self.p_item[6]''')
-        if not self.p_item_used[6]: notUsedPools.append('''self.p_item[6]''')
-        if self.p_item[7] is None: nonePools.append('''self.p_item[7]''')
-        if not self.p_item_used[7]: notUsedPools.append('''self.p_item[7]''')
-        if self.p_item[8] is None: nonePools.append('''self.p_item[8]''')
-        if not self.p_item_used[8]: notUsedPools.append('''self.p_item[8]''')
-        if self.p_item[9] is None: nonePools.append('''self.p_item[9]''')
-        if not self.p_item_used[9]: notUsedPools.append('''self.p_item[9]''')
+        if self.p_category[0] is None: nonePools.append('''self.p_category[0]''')
+        if not self.p_category_used[0]: notUsedPools.append('''self.p_category[0]''')
+        if self.p_category[1] is None: nonePools.append('''self.p_category[1]''')
+        if not self.p_category_used[1]: notUsedPools.append('''self.p_category[1]''')
         return (nonePools, notUsedPools)
     def restart(self):
         try:
@@ -745,8 +12264,6 @@ class sut(object):
             pass
         if self.__collectCov: self.cleanCov()
     # BEGIN RELOAD CODE
-        if self.__doReload:
-            reload(database)
     # END RELOAD CODE
         self.__test = []
         self.__failure = None
@@ -757,6 +12274,30 @@ class sut(object):
         self.__poolsUsed = set([])
         self.__disabledByNone = set([])
         self.__disabledByUsed = set([])
+        self.p_str = {}
+        self.p_str_used = {}
+        self.p_str[0] = None
+        self.p_str_used[0] = True
+        self.p_str[1] = None
+        self.p_str_used[1] = True
+        self.p_str[2] = None
+        self.p_str_used[2] = True
+        self.p_str[3] = None
+        self.p_str_used[3] = True
+        self.p_str[4] = None
+        self.p_str_used[4] = True
+        self.p_int = {}
+        self.p_int_used = {}
+        self.p_int[0] = None
+        self.p_int_used[0] = True
+        self.p_int[1] = None
+        self.p_int_used[1] = True
+        self.p_int[2] = None
+        self.p_int_used[2] = True
+        self.p_int[3] = None
+        self.p_int_used[3] = True
+        self.p_int[4] = None
+        self.p_int_used[4] = True
         self.p_item = {}
         self.p_item_used = {}
         self.p_item[0] = None
@@ -765,21 +12306,12 @@ class sut(object):
         self.p_item_used[1] = True
         self.p_item[2] = None
         self.p_item_used[2] = True
-        self.p_item[3] = None
-        self.p_item_used[3] = True
-        self.p_item[4] = None
-        self.p_item_used[4] = True
-        self.p_item[5] = None
-        self.p_item_used[5] = True
-        self.p_item[6] = None
-        self.p_item_used[6] = True
-        self.p_item[7] = None
-        self.p_item_used[7] = True
-        self.p_item[8] = None
-        self.p_item_used[8] = True
-        self.p_item[9] = None
-        self.p_item_used[9] = True
-        init:
+        self.p_category = {}
+        self.p_category_used = {}
+        self.p_category[0] = None
+        self.p_category_used[0] = True
+        self.p_category[1] = None
+        self.p_category_used[1] = True
         if self.__useCould: self.computeInitialEnabled()
         try:
             test_after_restart(self)
@@ -795,30 +12327,60 @@ class sut(object):
         if self.__replayBacktrack:
             return self.captureReplay(self.__test)
         st = []
+        try: st.append(copy.deepcopy(self.p_str))
+        except: st.append("UNABLE TO COPY")
+        st.append(copy.deepcopy(self.p_str_used))
+        try: st.append(copy.deepcopy(self.p_int))
+        except: st.append("UNABLE TO COPY")
+        st.append(copy.deepcopy(self.p_int_used))
         try: st.append(copy.deepcopy(self.p_item))
         except: st.append("UNABLE TO COPY")
         st.append(copy.deepcopy(self.p_item_used))
+        try: st.append(copy.deepcopy(self.p_category))
+        except: st.append("UNABLE TO COPY")
+        st.append(copy.deepcopy(self.p_category_used))
         st.append(copy.copy(self.__test))
         return st
     def shallowState(self):
-        return [ ("self.p_item",self.p_item)]
+        return [ ("self.p_str",self.p_str),("self.p_int",self.p_int),("self.p_item",self.p_item),("self.p_category",self.p_category)]
     def abstract(self,state):
         if self.__replayBacktrack:
             return state
-        return ( state[0],state[1])
+        return ( state[0],state[1],state[2],state[3],state[4],state[5],state[6],state[7])
     def backtrack(self,old):
         if self.__replayBacktrack:
             self.replay(self.replayable(old))
             return
-        self.p_item = copy.deepcopy(old[0])
-        self.p_item_used = copy.deepcopy(old[1])
+        self.p_str = copy.deepcopy(old[0])
+        self.p_str_used = copy.deepcopy(old[1])
+        self.p_int = copy.deepcopy(old[2])
+        self.p_int_used = copy.deepcopy(old[3])
+        self.p_item = copy.deepcopy(old[4])
+        self.p_item_used = copy.deepcopy(old[5])
+        self.p_category = copy.deepcopy(old[6])
+        self.p_category_used = copy.deepcopy(old[7])
         self.__test = copy.copy(old[-1])
     def check(self):
         try:
             if self.__collectCov:
                 self.__cov.start()
             # BEGIN CHECK CODE
-            assert property:
+            # GLOBAL self.p_str[0]
+            if (self.p_str[0] is not None): # CHECK POOL INIT
+                assert all(item.name in [self.p_str[0]] for item in get_items())
+            # GLOBAL self.p_str[1]
+            if (self.p_str[1] is not None): # CHECK POOL INIT
+                assert all(item.name in [self.p_str[1]] for item in get_items())
+            # GLOBAL self.p_str[2]
+            if (self.p_str[2] is not None): # CHECK POOL INIT
+                assert all(item.name in [self.p_str[2]] for item in get_items())
+            # GLOBAL self.p_str[3]
+            if (self.p_str[3] is not None): # CHECK POOL INIT
+                assert all(item.name in [self.p_str[3]] for item in get_items())
+            # GLOBAL self.p_str[4]
+            if (self.p_str[4] is not None): # CHECK POOL INIT
+                assert all(item.name in [self.p_str[4]] for item in get_items())
+            assert all(category.name in ["Electronics", "Apparel"] for category in get_categories())
             # END CHECK CODE
         except KeyboardInterrupt as e:
             raise e
